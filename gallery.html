@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Sassy Foodie</title>
+<meta name="description" content="Real plates by Chef Daija, photographed by her, in Philadelphia, PA.">
+<meta name="theme-color" content="#0A0A0B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery — Sassy Foodie">
+<meta property="og:description" content="Real plates by Chef Daija, photographed by her, in Philadelphia, PA.">
+<meta property="og:site_name" content="Sassy Foodie">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/css/site.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="./index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l3 6a3 3 0 0 1-6 0z"/></svg><span>Sassy Foodie</span></a>
+    <nav aria-label="Main">
+      <ul class="nav__links" id="nav-links">
+        <li><a href="menu.html">The Kitchen</a></li>
+        <li><a href="infusions.html">Infusions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn btn--ghost" href="order.html">Order &middot; <span data-order-count>0</span></a></li>
+      </ul>
+    </nav>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="label">Gallery</span>
+        <h1>Her plates</h1>
+        <p class="lede">All of it hers &mdash; her cooking, her camera, her kitchen. No stock photography and nothing generated. What you see is what turns up in the container.</p>
+      </div>
+      <div class="panel center rv">
+      <span class="label">Gallery</span>
+      <h3>Her plates live on her socials right now</h3>
+      <p class="note" style="margin-inline:auto">Every photo on this site is her own. Nothing here is stock and nothing is AI-generated — so this grid stays empty until her real posts are pulled in.</p>
+      <p class="hero__cta" style="margin-top:1.5rem">
+        <a class="btn" href="https://www.instagram.com/sassy.foodiee" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="btn btn--ghost" href="https://www.tiktok.com/@cookwdaijj" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </p>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="./index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l3 6a3 3 0 0 1-6 0z"/></svg><span>Sassy Foodie</span></a>
+        <p class="note" style="margin-top:1rem">Real food, cooked by hand, in Philadelphia.<br>Cooked by Chef Daija in Philadelphia, PA.</p>
+      </div>
+      <div>
+        <h4>Order</h4>
+        <ul>
+          <li><a href="menu.html">The Kitchen</a></li>
+          <li><a href="infusions.html">Infusions (21+)</a></li>
+          <li><a href="order.html">Your order</a></li>
+          <li><a href="tel:+12676160427">Text 267-616-0427</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/sassy.foodiee" rel="noopener noreferrer" target="_blank">Instagram &middot; sassy.foodiee</a></li>
+          <li><a href="https://www.tiktok.com/@cookwdaijj" rel="noopener noreferrer" target="_blank">TikTok &middot; cookwdaijj</a></li>
+          <li><a href="about.html">About Daija</a></li>
+          <li><a href="contact.html">Contact &amp; hours</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; <span data-year></span> Sassy Foodie</span>
+      <span>Built by NYC Tailblazers</span>
+    </div>
+  </div>
+</footer>
+
+<div class="order-bar" data-open="false" role="region" aria-label="Your order">
+  <div class="order-bar__in">
+    <span class="order-bar__sum" data-order-sum></span>
+    <a class="btn" href="order.html">Review order <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div>
+
+<script src="./src/js/order.js"></script>
+<script src="./src/js/site.js"></script>
+
+</body>
+</html>

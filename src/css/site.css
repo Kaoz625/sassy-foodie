@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Chef Daija / Sassy Foodie — site stylesheet
+   Everything here is governed by DESIGN.md. Read that before editing.
+   Sections: 1 tokens · 2 reset · 3 type · 4 layout · 5 nav · 6 hero
+             7 beam · 8 cards · 9 menu · 10 order · 11 gate · 12 forms
+             13 footer · 14 reveal · 15 utilities · 16 responsive
+   ========================================================================== */
+
+/* --- 1. TOKENS ---------------------------------------------------------- */
+:root {
+  /* colour */
+  --ink:        #0A0A0B;
+  --ink-2:      #121114;
+  --ink-3:      #1B191E;
+  --ink-line:   #2A272F;
+  --ivory:      #F4EDE4;
+  --ivory-dim:  #B8AEA3;
+  --gold:       #D9A94A;
+  --gold-hi:    #F2D08A;
+  --pom:        #A8202E;
+  --pom-lift:   #E0525E;
+  --blush:      #E7BBA8;
+
+  /* the accent indirection — the Infusion pages re-point this */
+  --accent:     var(--gold);
+  --accent-hi:  var(--gold-hi);
+
+  /* type */
+  --f-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --f-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* spacing scale */
+  --s0: .5rem;  --s1: .75rem; --s2: 1rem;   --s3: 1.5rem;
+  --s4: 2rem;   --s5: 3rem;   --s6: 4rem;   --s7: 6rem;
+  --s8: 8rem;   --s9: 12rem;
+
+  /* geometry */
+  --maxw: 1240px;
+  --measure: 62ch;
+  --r-sm: 2px;
+  --r-md: 4px;
+
+  /* motion */
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --dur: 600ms;
+}
+
+/* --- 2. RESET ----------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--f-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video, canvas, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+
+/* focus is never removed — house accessibility rule */
+:focus-visible {
+  outline: 2px solid var(--accent-hi);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--accent); color: var(--ink);
+  padding: var(--s1) var(--s3); font-family: var(--f-mono);
+  font-size: .8rem; text-transform: uppercase; letter-spacing: .1em;
+  text-decoration: none;
+}
+.skip:focus { left: var(--s2); top: var(--s2); }
+
+/* --- 3. TYPE ------------------------------------------------------------ */
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 60;
+  line-height: 1.04;
+  letter-spacing: -.02em;
+  margin: 0 0 var(--s2);
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.75rem, 8vw, 6.5rem); }
+h2 { font-size: clamp(2rem, 5vw, 3.75rem); }
+h3 { font-size: clamp(1.35rem, 2.4vw, 1.9rem); }
+h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); }
+
+p { margin: 0 0 var(--s2); max-width: var(--measure); }
+.lede { font-size: clamp(1.05rem, 1.7vw, 1.3rem); color: var(--ivory-dim); line-height: 1.6; }
+
+.label {
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.label--dim { color: var(--ivory-dim); }
+
+.price {
+  font-family: var(--f-mono);
+  font-size: .95rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ital { font-style: italic; }
+
+/* --- 4. LAYOUT ---------------------------------------------------------- */
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--s3); }
+section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; }
+.center { text-align: center; }
+.center p { margin-inline: auto; }
+.stack > * + * { margin-top: var(--s2); }
+
+/* the symmetric section head — DESIGN.md §4 balance rule */
+.sec-head { text-align: center; max-width: 68ch; margin: 0 auto var(--s5); }
+.sec-head p { margin-inline: auto; }
+
+/* --- 5. NAV ------------------------------------------------------------- */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--ink-line);
+}
+.nav__in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s3); min-height: 68px;
+  max-width: var(--maxw); margin-inline: auto; padding-inline: var(--s3);
+}
+.brand {
+  font-family: var(--f-display); font-size: 1.15rem; font-weight: 600;
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  text-decoration: none; letter-spacing: -.01em;
+  display: flex; align-items: center; gap: .6rem;
+}
+.brand svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
+
+.nav__links { display: flex; align-items: center; gap: var(--s3); list-style: none; margin: 0; padding: 0; }
+.nav__links a {
+  text-decoration: none; font-size: .9rem; color: var(--ivory-dim);
+  padding: .5rem 0; position: relative; transition: color .25s var(--ease);
+}
+.nav__links a:hover { color: var(--ivory); }
+.nav__links a[aria-current="page"] { color: var(--accent); }
+.nav__links a[aria-current="page"]::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--accent);
+}
+
+.nav__toggle {
+  display: none; background: none; border: 1px solid var(--ink-line);
+  border-radius: var(--r-sm); width: 44px; height: 44px;
+  align-items: center; justify-content: center; cursor: pointer;
+}
+.nav__toggle svg { width: 20px; height: 20px; }
+
+/* --- 6. HERO ------------------------------------------------------------ */
+.hero { min-height: 92svh; display: grid; place-items: center; padding-block: var(--s7) var(--s6); overflow: hidden; }
+#hero-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+/* the light source behind the hero — allowed under DESIGN.md §2 */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(60% 55% at 50% 42%,
+              color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
+}
+.hero__in { position: relative; z-index: 2; text-align: center; max-width: 900px; }
+.hero h1 { margin-bottom: var(--s3); }
+.hero h1 em { font-style: italic; color: var(--accent); font-variation-settings: "SOFT" 80, "WONK" 1; }
+.hero .lede { margin-inline: auto; max-width: 54ch; }
+.hero__cta { display: flex; gap: var(--s2); justify-content: center; flex-wrap: wrap; margin-top: var(--s4); }
+
+.hero__meta {
+  display: flex; gap: var(--s4); justify-content: center; flex-wrap: wrap;
+  margin-top: var(--s5); font-family: var(--f-mono); font-size: .72rem;
+  text-transform: uppercase; letter-spacing: .14em; color: var(--ivory-dim);
+}
+.hero__meta span { display: flex; align-items: center; gap: .5rem; }
+.hero__meta span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+/* --- 7. THE BEAM (scale motif) ------------------------------------------ */
+.beam { position: relative; height: 1px; background: var(--ink-line); margin-block: var(--s5); overflow: visible; }
+.beam::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 42%; height: 1px; background: linear-gradient(90deg,
+    transparent, var(--accent), transparent);
+  transform: translate(-50%, -50%) rotate(var(--tilt, 0deg));
+  transform-origin: center; transition: transform 1.2s var(--ease);
+}
+.beam::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); transform: translate(-50%, -50%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+/* --- 8. BUTTONS & PILLS ------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 48px; padding: 0 var(--s3);
+  font-family: var(--f-mono); font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  text-decoration: none; cursor: pointer;
+  border-radius: var(--r-sm); border: 1px solid var(--accent);
+  background: var(--accent); color: var(--ink);
+  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+.btn:hover { background: var(--accent-hi); border-color: var(--accent-hi); transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; }
+.btn--ghost { background: transparent; color: var(--accent); }
+.btn--ghost:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-hi); }
+.btn--wide { width: 100%; }
+.btn svg { width: 16px; height: 16px; flex: none; }
+
+.pill {
+  display: inline-block; font-family: var(--f-mono); font-size: .62rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  padding: .25rem .5rem; border-radius: var(--r-sm);
+  border: 1px solid var(--ink-line); color: var(--ivory-dim);
+}
+.pill--hot   { border-color: var(--pom); color: var(--pom-lift); }
+.pill--gold  { border-color: var(--accent); color: var(--accent); }
+.pill--out   { border-color: var(--ink-line); color: var(--ivory-dim); opacity: .7; }
+
+/* --- 9. CARDS & MENU ---------------------------------------------------- */
+.grid { display: grid; gap: var(--s3); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.dish {
+  display: flex; flex-direction: column;
+  background: var(--ink-2); border: 1px solid var(--ink-line);
+  border-radius: var(--r-md); overflow: hidden;
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
+}
+.dish:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); transform: translateY(-3px); }
+.dish__img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; object-position: center; background: var(--ink-3); }
+/* type-only card when we have no real photo — DESIGN.md §6 */
+.dish__img--none {
+  aspect-ratio: 4 / 3; display: grid; place-items: center;
+  background: var(--ink-3); color: var(--ink-line);
+  font-family: var(--f-display); font-size: 3rem; font-style: italic;
+}
+.dish__body { padding: var(--s3); display: flex; flex-direction: column; gap: var(--s1); flex: 1; }
+.dish__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s2); }
+.dish__name { font-family: var(--f-display); font-size: 1.2rem; margin: 0; line-height: 1.2; }
+.dish__desc { font-size: .9rem; color: var(--ivory-dim); margin: 0; flex: 1; }
+.dish__tags { display: flex; gap: .35rem; flex-wrap: wrap; }
+.dish__foot { display: flex; gap: var(--s1); align-items: center; margin-top: var(--s1); }
+
+.qty { display: flex; align-items: center; border: 1px solid var(--ink-line); border-radius: var(--r-sm); }
+.qty button {
+  width: 40px; height: 40px; background: none; border: 0; cursor: pointer;
+  color: var(--ivory-dim); font-size: 1.1rem; line-height: 1;
+  transition: color .2s var(--ease);
+}
+.qty button:hover { color: var(--accent); }
+.qty output { min-width: 2.2rem; text-align: center; font-family: var(--f-mono); font-size: .9rem; }
+
+/* --- 10. ORDER BAR & SUMMARY -------------------------------------------- */
+.order-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  background: color-mix(in srgb, var(--ink-2) 96%, transparent);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--accent);
+  transform: translateY(110%); transition: transform .45s var(--ease);
+}
+.order-bar[data-open="true"] { transform: translateY(0); }
+.order-bar__in {
+  max-width: var(--maxw); margin-inline: auto; padding: var(--s2) var(--s3);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+}
+.order-bar__sum { font-family: var(--f-mono); font-size: .8rem; letter-spacing: .06em; }
+.order-bar__sum strong { color: var(--accent); }
+
+.otable { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.otable th, .otable td { text-align: left; padding: var(--s1) var(--s0); border-bottom: 1px solid var(--ink-line); }
+.otable th { font-family: var(--f-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; color: var(--ivory-dim); font-weight: 400; }
+.otable td:last-child, .otable th:last-child { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.otable tfoot td { border-bottom: 0; padding-top: var(--s2); font-family: var(--f-mono); font-size: 1rem; color: var(--accent); }
+
+.panel { background: var(--ink-2); border: 1px solid var(--ink-line); border-radius: var(--r-md); padding: var(--s4); }
+
+/* --- 11. AGE GATE ------------------------------------------------------- */
+.gate {
+  position: fixed; inset: 0; z-index: 300;
+  background: var(--ink); display: grid; place-items: center; padding: var(--s3);
+}
+.gate[hidden] { display: none; }
+.gate__box { max-width: 460px; text-align: center; }
+.gate__box h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.gate__actions { display: flex; gap: var(--s2); justify-content: center; flex-wrap: wrap; margin-top: var(--s3); }
+.gate__fine { font-size: .78rem; color: var(--ivory-dim); margin-top: var(--s3); max-width: 46ch; margin-inline: auto; }
+
+/* --- 12. FORMS ---------------------------------------------------------- */
+.field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: var(--s2); }
+.field label { font-family: var(--f-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; color: var(--ivory-dim); }
+.field input, .field textarea, .field select {
+  background: var(--ink-3); border: 1px solid var(--ink-line);
+  border-radius: var(--r-sm); padding: .7rem var(--s1); min-height: 46px;
+  transition: border-color .2s var(--ease);
+}
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); }
+.field textarea { min-height: 110px; resize: vertical; }
+
+/* --- 13. FOOTER --------------------------------------------------------- */
+.foot { border-top: 1px solid var(--ink-line); padding-block: var(--s5) var(--s4); margin-top: var(--s5); }
+.foot__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--s4); }
+.foot h4 { font-family: var(--f-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .16em; color: var(--ivory-dim); font-weight: 400; margin-bottom: var(--s2); }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.foot a { text-decoration: none; color: var(--ivory-dim); font-size: .9rem; transition: color .2s var(--ease); }
+.foot a:hover { color: var(--accent); }
+.foot__base {
+  margin-top: var(--s5); padding-top: var(--s3); border-top: 1px solid var(--ink-line);
+  display: flex; justify-content: space-between; gap: var(--s2); flex-wrap: wrap;
+  font-family: var(--f-mono); font-size: .68rem; color: var(--ivory-dim);
+  text-transform: uppercase; letter-spacing: .1em;
+}
+
+/* --- 14. REVEAL --------------------------------------------------------- */
+.rv { opacity: 0; transform: translateY(12px); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.rv.is-in { opacity: 1; transform: none; }
+
+/* --- 15. UTILITIES ------------------------------------------------------ */
+.vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.mt0 { margin-top: 0; } .mb0 { margin-bottom: 0; }
+.note { font-size: .82rem; color: var(--ivory-dim); }
+
+/* --- 16. RESPONSIVE ----------------------------------------------------- */
+@media (max-width: 900px) {
+  .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .foot__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .nav__toggle { display: inline-flex; }
+  .nav__links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--ink-2); border-bottom: 1px solid var(--ink-line);
+    padding: var(--s2) var(--s3); display: none;
+  }
+  .nav__links[data-open="true"] { display: flex; }
+  .nav__links a { padding: var(--s1) 0; font-size: 1rem; }
+  .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+  .foot__grid { grid-template-columns: 1fr; }
+  .hero__meta { gap: var(--s2); flex-direction: column; align-items: center; }
+  .order-bar__in { flex-direction: column; align-items: stretch; }
+}
+
+/* --- REDUCED MOTION — tested, not assumed (DESIGN.md §5) ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important; scroll-behavior: auto !important;
+  }
+  .rv { opacity: 1; transform: none; }
+  .dish:hover, .btn:hover { transform: none; }
+}
+
+/* --- The Infusion side re-points the accent (DESIGN.md §2) -------------- */
+body.infusion {
+  --accent: var(--blush);
+  --accent-hi: #F3D5C7;
+}
+.btn.is-off { opacity: .45; cursor: not-allowed; }
+.otable .pill { margin-left: .4rem; vertical-align: middle; }
+.otable .qty { display: inline-flex; }
