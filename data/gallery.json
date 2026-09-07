@@ -1,1 +1,36 @@
-{"items": []}
+{
+  "note": "Her own photos only. Captions are hers, quoted from the post the image came from, with her spacing kept. The first ten images with an 'img' also feed the 3D hero ring on the home page.",
+  "items": [
+    { "img": "assets/img/platter-soul-food.jpg", "alt": "Fried chicken, baked mac and cheese with a browned crust, collard greens and a toasted garlic butter roll in a black takeout tray", "caption": "The $25 platter. A customer texted her back: “Food so good I dam near cried”." },
+    { "img": "assets/img/seafood-boil.jpg", "alt": "Snow crab clusters, shrimp, corn on the cob and red potatoes seasoned red in a foil tray", "caption": "Seafood boil — snow crab, shrimp, corn, red potatoes and sausage." },
+    { "img": "assets/img/lobster-grits.jpg", "alt": "A split grilled lobster tail over grits with peppers, collard greens and grilled bread", "caption": "Lobster tail over grits with peppers and onions, collards and grilled bread." },
+    { "img": "assets/img/garlic-parm-wings.jpg", "alt": "Golden garlic parmesan wings dusted with cheese and parsley in a foil tray", "caption": "Garlic parm wings. $10 with a side of fries." },
+    { "img": "assets/img/baked-mac.jpg", "alt": "Close-up of baked macaroni and cheese with a deep golden crust", "caption": "The baked mac. This is the crust people order it for." },
+    { "img": "assets/img/seafood-lasagna.jpg", "alt": "Baked seafood lasagna with a browned cheese top in a foil tray", "caption": "Seafood lasagna — the one her customers text her about the next day." },
+    { "img": "assets/img/salmon-honey-lemon-pepper.jpg", "alt": "A seared salmon fillet glazed golden in a pan", "caption": "Honey lemon pepper salmon. $12 with two sides." },
+    { "img": "assets/img/surf-and-turf.jpg", "alt": "Steak with a split grilled lobster tail, grilled shrimp and stuffed mushroom caps", "caption": "Surf and turf — steak, lobster tail, grilled shrimp, stuffed mushroom caps." },
+    { "img": "assets/img/steak-shrimp-plate.jpg", "alt": "Sliced steak with shrimp, broccoli and sauteed spinach on a plate", "caption": "Steak and shrimp with broccoli and spinach." },
+    { "img": "assets/img/seafood-mac.jpg", "alt": "A large tray of baked macaroni and cheese packed with shrimp", "caption": "Seafood mac, by the tray." },
+    { "img": "assets/img/lamb-chops.jpg", "alt": "Grilled jerk lamb chops beside collard greens and macaroni on a white plate", "caption": "Jerk lamb chops with mac and cheese and collard greens." },
+    { "img": "assets/img/taiwanese-shrimp.jpg", "alt": "Glazed shrimp with sliced onions and scallions in a dark sauce", "caption": "Taiwanese shrimp over white rice. $25 for a pull up for a plate." },
+    { "img": "assets/img/eggrolls-cheese-fries.jpg", "alt": "Shrimp and broccoli egg rolls cut open beside curly fries with cheese sauce", "caption": "Shrimp and broccoli egg rolls with cheese-sauce fries." },
+    { "img": "assets/img/wings-sweet-chili.jpg", "alt": "Sweet Thai chili glazed wings with sesame seeds beside crinkle-cut fries in a takeout container", "caption": "Sweet Thai chili wings with fries." },
+    { "img": "assets/img/mac-catering-pan.jpg", "alt": "A full aluminum catering pan of baked macaroni and cheese with a browned top", "caption": "“Put y’all orders in now” — catering pans of the baked mac." },
+    { "img": "assets/img/catering-spread.jpg", "alt": "A catering table set with platters, rolls and flowers", "caption": "A spread she put out for a booking." },
+    { "img": "assets/img/steak-egg-cheese.jpg", "alt": "A steak, egg and cheese sandwich on a toasted bagel wrapped in foil", "caption": "Steak, egg and cheese with chipotle mayo." },
+    { "img": "assets/img/chicken-greenbeans.jpg", "alt": "A seared chicken breast with green beans and roasted baby potatoes on a white plate", "caption": "Creamy garlic smothered chicken, roasted potatoes, sauteed string beans." },
+    { "img": "assets/img/miso-glazed-chicken.jpg", "alt": "Glazed chicken with broccoli and rice on a white plate", "caption": "Miso glazed chicken — miso, honey, ginger, garlic, green onions, fish sauce and soy." },
+    { "img": "assets/img/stuffed-peppers.jpg", "alt": "Halved peppers stuffed with shrimp and risotto on a white plate", "caption": "Stuffed peppers with shrimp and tomato risotto." },
+    { "img": "assets/img/steak-noodles.jpg", "alt": "Noodles in brown sauce with sliced steak and peppers on a red plate", "caption": "Steak and noodles in brown sauce." },
+    { "img": "assets/img/pesto-bruschetta.jpg", "alt": "Toasted garlic bread topped with tomato, fresh mozzarella and pesto", "caption": "Pesto, tomato and fresh mozzarella on garlic bread." },
+    { "img": "assets/img/chorizo-queso-dip.jpg", "alt": "Chorizo queso dip topped with crumbled sausage in a skillet", "caption": "Chorizo queso dip." },
+    { "img": "assets/img/strawberry-cake.jpg", "alt": "A tray of tres leches cake with whipped cream and sliced strawberries on top", "caption": "Tres leches, strawberries on top." },
+    { "img": "assets/img/banana-pudding.jpg", "alt": "A tray of banana pudding topped with crushed vanilla wafers", "caption": "Banana pudding with homemade whipped cream." },
+    { "img": "assets/img/platter-mac-greenbeans.jpg", "alt": "Fried chicken cutlet with baked mac and cheese and green beans on a white plate", "caption": "Fried cutlet, mac and cheese, green beans." },
+    { "img": "assets/img/shrimp-risotto.jpg", "alt": "A stuffed steak topped with shrimp sitting on creamy risotto", "caption": "Stuffed steak with shrimp over risotto." },
+    { "img": "assets/img/chicken-rice-greenbeans.jpg", "alt": "Roasted chicken over rice with green beans in a black tray", "caption": "Roasted chicken over rice with green beans." },
+    { "img": "assets/img/wings-fries-tray.jpg", "alt": "Wings and crinkle-cut fries in a white takeout container", "caption": "Wings and fries, boxed and ready for pickup." },
+    { "img": "assets/img/seafood-boil-corn.jpg", "alt": "Corn on the cob, red potatoes and sliced sausage in seasoned butter in a foil tray", "caption": "Corn, potatoes and sausage out of the boil." },
+    { "img": "assets/img/salmon-pan.jpg", "alt": "Two salmon fillets cooking in a cream sauce in a pan", "caption": "Salmon going into a cream sauce." }
+  ]
+}

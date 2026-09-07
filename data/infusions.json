@@ -1,6 +1,40 @@
 {
   "menu": "infusion",
-  "updated": "",
-  "source": "Pending — populated from Chef Daija's own posts. Never invent an item or a price.",
-  "sections": []
+  "updated": "2026-09-06",
+  "source": "Every item here is something she has actually posted making. She has NEVER published a price for the infusion add-on - her own words are 'I can infuse your food for an additional price' (post SF-37, 2021-06-22). So every price is 'Ask'. Do not invent one. The 'Shroom' items on her deleted 2021 dessert menu are deliberately NOT here - see research/menu-extracted.md section 4.",
+  "sections": [
+    {
+      "no": "01",
+      "title": "The Add-On",
+      "heading": "It is an add-on, not a separate kitchen",
+      "note": "She makes her own infused butter and cooks with it. That means most things on The Kitchen menu can be made infused. She sets the price per dish and per strength, so every item here says Ask - text her and she will quote you.",
+      "items": [
+        { "id": "inf-any", "name": "Any Dish, Infused", "price": 0,
+          "desc": "Pick anything off The Kitchen menu and ask her to infuse it. She quotes the add-on based on the dish and the strength you want.",
+          "tags": ["ADD-ON", "21+"] },
+        { "id": "inf-butter", "name": "Infused Butter", "price": 0,
+          "desc": "The base she cooks with. She makes it herself.",
+          "tags": ["21+"] }
+      ]
+    },
+    {
+      "no": "02",
+      "title": "What She Already Makes",
+      "heading": "The ones she makes most",
+      "note": "These are the infused dishes she has posted and that people ask her for again.",
+      "items": [
+        { "id": "inf-garlic-parm-wings", "name": "Infused Garlic Parm Wings", "price": 0,
+          "desc": "Her garlic parm wings, infused. One of her most-watched videos.",
+          "img": "assets/img/garlic-parm-wings.jpg",
+          "alt": "Golden garlic parmesan wings dusted with cheese and parsley in a foil tray",
+          "tags": ["21+"] },
+        { "id": "inf-buffalo-dip", "name": "Infused Buffalo Chicken Dip", "price": 0,
+          "desc": "The buffalo chicken dip, infused. Made to order for a group.",
+          "tags": ["21+"] },
+        { "id": "inf-salmon-dip", "name": "Infused Salmon Buffalo Dip", "price": 0,
+          "desc": "The salmon version of the dip.",
+          "tags": ["21+"] }
+      ]
+    }
+  ]
 }

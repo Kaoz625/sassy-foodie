@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Kitchen — Sassy Foodie</title>
-<meta name="description" content="The Kitchen menu from Chef Daija in Philadelphia, PA. Build an order and text it straight to her.">
+<meta name="description" content="The Kitchen menu from Chef Daija in West Philadelphia. Build an order and text it straight to her.">
 <meta name="theme-color" content="#0A0A0B">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Kitchen — Sassy Foodie">
-<meta property="og:description" content="The Kitchen menu from Chef Daija in Philadelphia, PA. Build an order and text it straight to her.">
+<meta property="og:description" content="The Kitchen menu from Chef Daija in West Philadelphia. Build an order and text it straight to her.">
 <meta property="og:site_name" content="Sassy Foodie">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,12 +47,949 @@
         <p class="lede">Add what you want, then send it as one text. She confirms the time and you pay by Cash App. Prices shown are the ones she has posted herself &mdash; anything marked <em>Ask</em> changes with the market, so text her for today's number.</p>
       </div>
       
-    <div class="panel center rv">
-      <span class="label">Menu</span>
-      <h3>Today's menu goes out on her socials first</h3>
-      <p class="note" style="margin-inline:auto">This page fills in from Chef Daija's own posts. Nothing here is invented — if an item is not confirmed, it is not listed. Text her for what is cooking today.</p>
-      <p style="margin-top:1.5rem"><a class="btn" href="tel:+12676160427">Text 267-616-0427</a></p>
-    </div>
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">01 The Platters</span>
+        <h2>The platters</h2>
+        <p class="lede">Her main business. A platter is $25 and a $15 deposit by Cash App holds it. Pre-order — she cooks it the day you want it.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/platter-soul-food.jpg" alt="Fried chicken, baked mac and cheese with a browned cheese crust, collard greens and a toasted garlic butter roll in a black takeout tray" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Soul Food Platter</h3>
+            <span class="price">$25.00</span>
+          </div>
+          <p class="dish__desc">Wings, baked mac and cheese, collard greens with smoked turkey necks, candied yams, and garlic butter rolls.</p>
+          <div class="dish__tags"><span class="pill ">SIGNATURE</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="platter-soul" data-name="Soul Food Platter"
+                   data-price="25" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Soul Food Platter">
+                   <button type="button" data-step="platter-soul" data-dir="-1" aria-label="One less Soul Food Platter">&minus;</button>
+                   <output data-qty-for="platter-soul">0</output>
+                   <button type="button" data-step="platter-soul" data-dir="1" aria-label="One more Soul Food Platter">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/platter-mac-greenbeans.jpg" alt="Fried chicken cutlet with baked mac and cheese and green beans on a white plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Fried Cutlet Platter</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Fried chicken cutlet with baked mac and cheese and green beans.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="platter-cutlet" data-name="Fried Cutlet Platter"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Fried Cutlet Platter">
+                   <button type="button" data-step="platter-cutlet" data-dir="-1" aria-label="One less Fried Cutlet Platter">&minus;</button>
+                   <output data-qty-for="platter-cutlet">0</output>
+                   <button type="button" data-step="platter-cutlet" data-dir="1" aria-label="One more Fried Cutlet Platter">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/lamb-chops.jpg" alt="Grilled jerk lamb chops beside collard greens and macaroni on a white plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Jerk Lamb Chops</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">With mac and cheese and collard greens.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="lamb-chops" data-name="Jerk Lamb Chops"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Jerk Lamb Chops">
+                   <button type="button" data-step="lamb-chops" data-dir="-1" aria-label="One less Jerk Lamb Chops">&minus;</button>
+                   <output data-qty-for="lamb-chops">0</output>
+                   <button type="button" data-step="lamb-chops" data-dir="1" aria-label="One more Jerk Lamb Chops">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">T</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Turkey Wing Platter</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Smothered turkey wing with her sides.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="turkey-wing" data-name="Turkey Wing Platter"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Turkey Wing Platter">
+                   <button type="button" data-step="turkey-wing" data-dir="-1" aria-label="One less Turkey Wing Platter">&minus;</button>
+                   <output data-qty-for="turkey-wing">0</output>
+                   <button type="button" data-step="turkey-wing" data-dir="1" aria-label="One more Turkey Wing Platter">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/mac-catering-pan.jpg" alt="A full aluminum catering pan of baked macaroni and cheese with a browned top" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Catering Trays</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Baked mac and cheese and her sides by the full pan, for repasts, parties and Sunday dinners.</p>
+          <div class="dish__tags"><span class="pill ">CATERING</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="catering-tray" data-name="Catering Trays"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Catering Trays">
+                   <button type="button" data-step="catering-tray" data-dir="-1" aria-label="One less Catering Trays">&minus;</button>
+                   <output data-qty-for="catering-tray">0</output>
+                   <button type="button" data-step="catering-tray" data-dir="1" aria-label="One more Catering Trays">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">02 Wings</span>
+        <h2>Wings</h2>
+        <p class="lede">Ten wings with a side of fries. Pick a flavor: lemon pepper, sweet Thai chili, or garlic parm.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/garlic-parm-wings.jpg" alt="Golden garlic parmesan wings dusted with cheese and parsley in a foil tray" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Wings &amp; Fries</h3>
+            <span class="price">$10.00</span>
+          </div>
+          <p class="dish__desc">Comes with a side of fries. Lemon pepper, sweet Thai chili, or garlic parm.</p>
+          <div class="dish__tags"><span class="pill ">$10</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="wings" data-name="Wings &amp; Fries"
+                   data-price="10" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Wings &amp; Fries">
+                   <button type="button" data-step="wings" data-dir="-1" aria-label="One less Wings &amp; Fries">&minus;</button>
+                   <output data-qty-for="wings">0</output>
+                   <button type="button" data-step="wings" data-dir="1" aria-label="One more Wings &amp; Fries">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/wings-sweet-chili.jpg" alt="Sweet Thai chili glazed wings with sesame seeds beside crinkle-cut fries in a takeout container" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Sweet Thai Chili Wings</h3>
+            <span class="price">$10.00</span>
+          </div>
+          <p class="dish__desc">Glazed and finished with sesame seeds, with a side of fries.</p>
+          <div class="dish__tags"><span class="pill pill--hot">SPICY</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="wings-thai" data-name="Sweet Thai Chili Wings"
+                   data-price="10" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Sweet Thai Chili Wings">
+                   <button type="button" data-step="wings-thai" data-dir="-1" aria-label="One less Sweet Thai Chili Wings">&minus;</button>
+                   <output data-qty-for="wings-thai">0</output>
+                   <button type="button" data-step="wings-thai" data-dir="1" aria-label="One more Sweet Thai Chili Wings">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">03 Seafood</span>
+        <h2>Seafood</h2>
+        <p class="lede">What she is best known for after the platters.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/seafood-boil.jpg" alt="Snow crab clusters, shrimp, corn on the cob and red potatoes seasoned red in a foil tray" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Seafood Boil</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Snow crab clusters, shrimp, corn on the cob, red potatoes and sliced sausage.</p>
+          <div class="dish__tags"><span class="pill pill--gold">LIMITED</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="seafood-boil" data-name="Seafood Boil"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Seafood Boil">
+                   <button type="button" data-step="seafood-boil" data-dir="-1" aria-label="One less Seafood Boil">&minus;</button>
+                   <output data-qty-for="seafood-boil">0</output>
+                   <button type="button" data-step="seafood-boil" data-dir="1" aria-label="One more Seafood Boil">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/lobster-grits.jpg" alt="A split grilled lobster tail over grits with peppers, collard greens and grilled bread" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Lobster Tail over Grits</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Peppers and onions, grilled bread and collard greens.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="lobster-grits" data-name="Lobster Tail over Grits"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Lobster Tail over Grits">
+                   <button type="button" data-step="lobster-grits" data-dir="-1" aria-label="One less Lobster Tail over Grits">&minus;</button>
+                   <output data-qty-for="lobster-grits">0</output>
+                   <button type="button" data-step="lobster-grits" data-dir="1" aria-label="One more Lobster Tail over Grits">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/salmon-honey-lemon-pepper.jpg" alt="A seared salmon fillet glazed golden in a pan" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Honey Lemon Pepper Salmon</h3>
+            <span class="price">$12.00</span>
+          </div>
+          <p class="dish__desc">Comes with two sides.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="salmon-hlp" data-name="Honey Lemon Pepper Salmon"
+                   data-price="12" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Honey Lemon Pepper Salmon">
+                   <button type="button" data-step="salmon-hlp" data-dir="-1" aria-label="One less Honey Lemon Pepper Salmon">&minus;</button>
+                   <output data-qty-for="salmon-hlp">0</output>
+                   <button type="button" data-step="salmon-hlp" data-dir="1" aria-label="One more Honey Lemon Pepper Salmon">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Spicy Honey Garlic Salmon</h3>
+            <span class="price">$15.00</span>
+          </div>
+          <p class="dish__desc">Entree on its own. Add sides separately.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="salmon-shg" data-name="Spicy Honey Garlic Salmon"
+                   data-price="15" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Spicy Honey Garlic Salmon">
+                   <button type="button" data-step="salmon-shg" data-dir="-1" aria-label="One less Spicy Honey Garlic Salmon">&minus;</button>
+                   <output data-qty-for="salmon-shg">0</output>
+                   <button type="button" data-step="salmon-shg" data-dir="1" aria-label="One more Spicy Honey Garlic Salmon">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/taiwanese-shrimp.jpg" alt="Glazed shrimp with sliced onions and scallions in a dark sauce" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Taiwanese Shrimp over White Rice</h3>
+            <span class="price">$25.00</span>
+          </div>
+          <p class="dish__desc">Shrimp with onions and scallions in a sweet glaze.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="taiwanese-shrimp" data-name="Taiwanese Shrimp over White Rice"
+                   data-price="25" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Taiwanese Shrimp over White Rice">
+                   <button type="button" data-step="taiwanese-shrimp" data-dir="-1" aria-label="One less Taiwanese Shrimp over White Rice">&minus;</button>
+                   <output data-qty-for="taiwanese-shrimp">0</output>
+                   <button type="button" data-step="taiwanese-shrimp" data-dir="1" aria-label="One more Taiwanese Shrimp over White Rice">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shrimp Scampi with Garlic Bread</h3>
+            <span class="price">$20.00</span>
+          </div>
+          <p class="dish__desc">Her 2022 menu price.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shrimp-scampi" data-name="Shrimp Scampi with Garlic Bread"
+                   data-price="20" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shrimp Scampi with Garlic Bread">
+                   <button type="button" data-step="shrimp-scampi" data-dir="-1" aria-label="One less Shrimp Scampi with Garlic Bread">&minus;</button>
+                   <output data-qty-for="shrimp-scampi">0</output>
+                   <button type="button" data-step="shrimp-scampi" data-dir="1" aria-label="One more Shrimp Scampi with Garlic Bread">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shrimp Alfredo with Garlic Bread</h3>
+            <span class="price">$15.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shrimp-alfredo" data-name="Shrimp Alfredo with Garlic Bread"
+                   data-price="15" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shrimp Alfredo with Garlic Bread">
+                   <button type="button" data-step="shrimp-alfredo" data-dir="-1" aria-label="One less Shrimp Alfredo with Garlic Bread">&minus;</button>
+                   <output data-qty-for="shrimp-alfredo">0</output>
+                   <button type="button" data-step="shrimp-alfredo" data-dir="1" aria-label="One more Shrimp Alfredo with Garlic Bread">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/shrimp-risotto.jpg" alt="A stuffed steak topped with shrimp sitting on creamy risotto" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Stuffed Steak with Shrimp</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Over tomato risotto.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="steak-shrimp-risotto" data-name="Stuffed Steak with Shrimp"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Stuffed Steak with Shrimp">
+                   <button type="button" data-step="steak-shrimp-risotto" data-dir="-1" aria-label="One less Stuffed Steak with Shrimp">&minus;</button>
+                   <output data-qty-for="steak-shrimp-risotto">0</output>
+                   <button type="button" data-step="steak-shrimp-risotto" data-dir="1" aria-label="One more Stuffed Steak with Shrimp">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/seafood-lasagna.jpg" alt="Baked seafood lasagna with a browned cheese top in a foil tray" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Seafood Lasagna</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">The one her customers text her about.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="seafood-lasagna" data-name="Seafood Lasagna"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Seafood Lasagna">
+                   <button type="button" data-step="seafood-lasagna" data-dir="-1" aria-label="One less Seafood Lasagna">&minus;</button>
+                   <output data-qty-for="seafood-lasagna">0</output>
+                   <button type="button" data-step="seafood-lasagna" data-dir="1" aria-label="One more Seafood Lasagna">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/seafood-mac.jpg" alt="A large tray of baked macaroni and cheese packed with shrimp" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Seafood Mac</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Baked mac and cheese loaded with shrimp.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="seafood-mac" data-name="Seafood Mac"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Seafood Mac">
+                   <button type="button" data-step="seafood-mac" data-dir="-1" aria-label="One less Seafood Mac">&minus;</button>
+                   <output data-qty-for="seafood-mac">0</output>
+                   <button type="button" data-step="seafood-mac" data-dir="1" aria-label="One more Seafood Mac">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/surf-and-turf.jpg" alt="Steak with a split grilled lobster tail, grilled shrimp and stuffed mushroom caps" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Surf and Turf</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Steak, split grilled lobster tail, grilled shrimp, stuffed mushroom caps and green beans.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="surf-turf" data-name="Surf and Turf"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Surf and Turf">
+                   <button type="button" data-step="surf-turf" data-dir="-1" aria-label="One less Surf and Turf">&minus;</button>
+                   <output data-qty-for="surf-turf">0</output>
+                   <button type="button" data-step="surf-turf" data-dir="1" aria-label="One more Surf and Turf">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Salmon Buffalo Dip</h3>
+            <span class="price">$15.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="salmon-buffalo-dip" data-name="Salmon Buffalo Dip"
+                   data-price="15" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Salmon Buffalo Dip">
+                   <button type="button" data-step="salmon-buffalo-dip" data-dir="-1" aria-label="One less Salmon Buffalo Dip">&minus;</button>
+                   <output data-qty-for="salmon-buffalo-dip">0</output>
+                   <button type="button" data-step="salmon-buffalo-dip" data-dir="1" aria-label="One more Salmon Buffalo Dip">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Seafood Salad</h3>
+            <span class="price">$6.00</span>
+          </div>
+          <p class="dish__desc">Real crab meat and shrimp.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="seafood-salad" data-name="Seafood Salad"
+                   data-price="6" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Seafood Salad">
+                   <button type="button" data-step="seafood-salad" data-dir="-1" aria-label="One less Seafood Salad">&minus;</button>
+                   <output data-qty-for="seafood-salad">0</output>
+                   <button type="button" data-step="seafood-salad" data-dir="1" aria-label="One more Seafood Salad">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">04 Sides</span>
+        <h2>Sides</h2>
+        
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/baked-mac.jpg" alt="Close-up of baked macaroni and cheese with a deep golden crust" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Baked Mac and Cheese</h3>
+            <span class="price">$6.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="side-mac" data-name="Baked Mac and Cheese"
+                   data-price="6" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Baked Mac and Cheese">
+                   <button type="button" data-step="side-mac" data-dir="-1" aria-label="One less Baked Mac and Cheese">&minus;</button>
+                   <output data-qty-for="side-mac">0</output>
+                   <button type="button" data-step="side-mac" data-dir="1" aria-label="One more Baked Mac and Cheese">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">C</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Collard Greens with Smoked Turkey</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="side-greens" data-name="Collard Greens with Smoked Turkey"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Collard Greens with Smoked Turkey">
+                   <button type="button" data-step="side-greens" data-dir="-1" aria-label="One less Collard Greens with Smoked Turkey">&minus;</button>
+                   <output data-qty-for="side-greens">0</output>
+                   <button type="button" data-step="side-greens" data-dir="1" aria-label="One more Collard Greens with Smoked Turkey">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">String Beans</h3>
+            <span class="price">$5.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="side-beans" data-name="String Beans"
+                   data-price="5" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for String Beans">
+                   <button type="button" data-step="side-beans" data-dir="-1" aria-label="One less String Beans">&minus;</button>
+                   <output data-qty-for="side-beans">0</output>
+                   <button type="button" data-step="side-beans" data-dir="1" aria-label="One more String Beans">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Sweet Potatoes</h3>
+            <span class="price">$5.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="side-yams" data-name="Sweet Potatoes"
+                   data-price="5" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Sweet Potatoes">
+                   <button type="button" data-step="side-yams" data-dir="-1" aria-label="One less Sweet Potatoes">&minus;</button>
+                   <output data-qty-for="side-yams">0</output>
+                   <button type="button" data-step="side-yams" data-dir="1" aria-label="One more Sweet Potatoes">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">F</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Fries</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="side-fries" data-name="Fries"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Fries">
+                   <button type="button" data-step="side-fries" data-dir="-1" aria-label="One less Fries">&minus;</button>
+                   <output data-qty-for="side-fries">0</output>
+                   <button type="button" data-step="side-fries" data-dir="1" aria-label="One more Fries">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">05 Breakfast</span>
+        <h2>Breakfast</h2>
+        <p class="lede">She posts breakfast as much as she posts dinner.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/steak-egg-cheese.jpg" alt="A steak, egg and cheese sandwich on a toasted bagel wrapped in foil" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Steak, Egg and Cheese</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">On a plain bagel with chipotle mayo.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="steak-egg-cheese" data-name="Steak, Egg and Cheese"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Steak, Egg and Cheese">
+                   <button type="button" data-step="steak-egg-cheese" data-dir="-1" aria-label="One less Steak, Egg and Cheese">&minus;</button>
+                   <output data-qty-for="steak-egg-cheese">0</output>
+                   <button type="button" data-step="steak-egg-cheese" data-dir="1" aria-label="One more Steak, Egg and Cheese">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">P</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Power Bowl</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Roasted sweet potatoes, chicken sausage, caramelized onions, sauteed yellow peppers, sauteed spinach and scrambled eggs with smoked cheddar and pepper jack.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="power-bowl" data-name="Power Bowl"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Power Bowl">
+                   <button type="button" data-step="power-bowl" data-dir="-1" aria-label="One less Power Bowl">&minus;</button>
+                   <output data-qty-for="power-bowl">0</output>
+                   <button type="button" data-step="power-bowl" data-dir="1" aria-label="One more Power Bowl">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">B</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Birria Breakfast Sandwich</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="birria-breakfast" data-name="Birria Breakfast Sandwich"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Birria Breakfast Sandwich">
+                   <button type="button" data-step="birria-breakfast" data-dir="-1" aria-label="One less Birria Breakfast Sandwich">&minus;</button>
+                   <output data-qty-for="birria-breakfast">0</output>
+                   <button type="button" data-step="birria-breakfast" data-dir="1" aria-label="One more Birria Breakfast Sandwich">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">06 Her Range</span>
+        <h2>The rest of her range</h2>
+        <p class="lede">She is restaurant-school trained and she does not stay in one lane. A vegan option is available on most of this - just ask.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">C</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Chicken Quesadillas</h3>
+            <span class="price">$13.00</span>
+          </div>
+          <p class="dish__desc">Comes with nachos and pico de gallo.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="quesadilla" data-name="Chicken Quesadillas"
+                   data-price="13" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Chicken Quesadillas">
+                   <button type="button" data-step="quesadilla" data-dir="-1" aria-label="One less Chicken Quesadillas">&minus;</button>
+                   <output data-qty-for="quesadilla">0</output>
+                   <button type="button" data-step="quesadilla" data-dir="1" aria-label="One more Chicken Quesadillas">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">B</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Beef Tacos</h3>
+            <span class="price">$4.00</span>
+          </div>
+          <p class="dish__desc">Each.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="beef-taco" data-name="Beef Tacos"
+                   data-price="4" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Beef Tacos">
+                   <button type="button" data-step="beef-taco" data-dir="-1" aria-label="One less Beef Tacos">&minus;</button>
+                   <output data-qty-for="beef-taco">0</output>
+                   <button type="button" data-step="beef-taco" data-dir="1" aria-label="One more Beef Tacos">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/miso-glazed-chicken.jpg" alt="Glazed chicken with broccoli and rice on a white plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Miso Glazed Chicken</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Marinated in miso paste, honey, ginger, garlic, green onions, fish sauce and soy sauce, with jasmine rice cooked in butter, garlic, thyme and rosemary, and roasted broccoli.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="miso-chicken" data-name="Miso Glazed Chicken"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Miso Glazed Chicken">
+                   <button type="button" data-step="miso-chicken" data-dir="-1" aria-label="One less Miso Glazed Chicken">&minus;</button>
+                   <output data-qty-for="miso-chicken">0</output>
+                   <button type="button" data-step="miso-chicken" data-dir="1" aria-label="One more Miso Glazed Chicken">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/chicken-greenbeans.jpg" alt="A seared chicken breast with green beans and roasted baby potatoes on a white plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Creamy Garlic Smothered Chicken</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">Roasted potatoes and sauteed string beans.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="garlic-chicken" data-name="Creamy Garlic Smothered Chicken"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Creamy Garlic Smothered Chicken">
+                   <button type="button" data-step="garlic-chicken" data-dir="-1" aria-label="One less Creamy Garlic Smothered Chicken">&minus;</button>
+                   <output data-qty-for="garlic-chicken">0</output>
+                   <button type="button" data-step="garlic-chicken" data-dir="1" aria-label="One more Creamy Garlic Smothered Chicken">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/steak-noodles.jpg" alt="Noodles in brown sauce with sliced steak and peppers on a red plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Steak and Noodles in Brown Sauce</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="steak-noodles" data-name="Steak and Noodles in Brown Sauce"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Steak and Noodles in Brown Sauce">
+                   <button type="button" data-step="steak-noodles" data-dir="-1" aria-label="One less Steak and Noodles in Brown Sauce">&minus;</button>
+                   <output data-qty-for="steak-noodles">0</output>
+                   <button type="button" data-step="steak-noodles" data-dir="1" aria-label="One more Steak and Noodles in Brown Sauce">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/stuffed-peppers.jpg" alt="Halved peppers stuffed with shrimp and risotto on a white plate" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Stuffed Peppers</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">With shrimp and tomato risotto.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="stuffed-peppers" data-name="Stuffed Peppers"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Stuffed Peppers">
+                   <button type="button" data-step="stuffed-peppers" data-dir="-1" aria-label="One less Stuffed Peppers">&minus;</button>
+                   <output data-qty-for="stuffed-peppers">0</output>
+                   <button type="button" data-step="stuffed-peppers" data-dir="1" aria-label="One more Stuffed Peppers">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/eggrolls-cheese-fries.jpg" alt="Shrimp and broccoli egg rolls cut open beside curly fries with cheese sauce" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shrimp and Broccoli Egg Rolls</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">With cheese-sauce fries.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="eggrolls" data-name="Shrimp and Broccoli Egg Rolls"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shrimp and Broccoli Egg Rolls">
+                   <button type="button" data-step="eggrolls" data-dir="-1" aria-label="One less Shrimp and Broccoli Egg Rolls">&minus;</button>
+                   <output data-qty-for="eggrolls">0</output>
+                   <button type="button" data-step="eggrolls" data-dir="1" aria-label="One more Shrimp and Broccoli Egg Rolls">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">B</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Buffalo Chicken Dip</h3>
+            <span class="price">$30.00</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="buffalo-dip" data-name="Buffalo Chicken Dip"
+                   data-price="30" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Buffalo Chicken Dip">
+                   <button type="button" data-step="buffalo-dip" data-dir="-1" aria-label="One less Buffalo Chicken Dip">&minus;</button>
+                   <output data-qty-for="buffalo-dip">0</output>
+                   <button type="button" data-step="buffalo-dip" data-dir="1" aria-label="One more Buffalo Chicken Dip">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/chorizo-queso-dip.jpg" alt="Chorizo queso dip topped with crumbled sausage in a skillet" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Chorizo Queso Dip</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="chorizo-queso" data-name="Chorizo Queso Dip"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Chorizo Queso Dip">
+                   <button type="button" data-step="chorizo-queso" data-dir="-1" aria-label="One less Chorizo Queso Dip">&minus;</button>
+                   <output data-qty-for="chorizo-queso">0</output>
+                   <button type="button" data-step="chorizo-queso" data-dir="1" aria-label="One more Chorizo Queso Dip">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/pesto-bruschetta.jpg" alt="Toasted garlic bread topped with tomato, fresh mozzarella and pesto" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Pesto, Tomato and Mozzarella on Garlic Bread</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="pesto-bread" data-name="Pesto, Tomato and Mozzarella on Garlic Bread"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Pesto, Tomato and Mozzarella on Garlic Bread">
+                   <button type="button" data-step="pesto-bread" data-dir="-1" aria-label="One less Pesto, Tomato and Mozzarella on Garlic Bread">&minus;</button>
+                   <output data-qty-for="pesto-bread">0</output>
+                   <button type="button" data-step="pesto-bread" data-dir="1" aria-label="One more Pesto, Tomato and Mozzarella on Garlic Bread">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">07 Sweets</span>
+        <h2>Sweets</h2>
+        
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/banana-pudding.jpg" alt="A tray of banana pudding topped with crushed vanilla wafers" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Banana Pudding</h3>
+            <span class="price">Ask</span>
+          </div>
+          <p class="dish__desc">With homemade whipped cream.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="banana-pudding" data-name="Banana Pudding"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Banana Pudding">
+                   <button type="button" data-step="banana-pudding" data-dir="-1" aria-label="One less Banana Pudding">&minus;</button>
+                   <output data-qty-for="banana-pudding">0</output>
+                   <button type="button" data-step="banana-pudding" data-dir="1" aria-label="One more Banana Pudding">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <img class="dish__img" src="assets/img/strawberry-cake.jpg" alt="A tray of tres leches cake with whipped cream and sliced strawberries on top" loading="lazy" decoding="async">
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Tres Leches Cake</h3>
+            <span class="price">Ask</span>
+          </div>
+          
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="tres-leches" data-name="Tres Leches Cake"
+                   data-price="0" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Tres Leches Cake">
+                   <button type="button" data-step="tres-leches" data-dir="-1" aria-label="One less Tres Leches Cake">&minus;</button>
+                   <output data-qty-for="tres-leches">0</output>
+                   <button type="button" data-step="tres-leches" data-dir="1" aria-label="One more Tres Leches Cake">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Strawberry Shortcake Cupcakes</h3>
+            <span class="price">$25.00</span>
+          </div>
+          <p class="dish__desc">Ten cupcakes.</p>
+          
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shortcake-cupcakes" data-name="Strawberry Shortcake Cupcakes"
+                   data-price="25" data-menu="kitchen">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Strawberry Shortcake Cupcakes">
+                   <button type="button" data-step="shortcake-cupcakes" data-dir="-1" aria-label="One less Strawberry Shortcake Cupcakes">&minus;</button>
+                   <output data-qty-for="shortcake-cupcakes">0</output>
+                   <button type="button" data-step="shortcake-cupcakes" data-dir="1" aria-label="One more Strawberry Shortcake Cupcakes">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
     </div>
   </section>
   <div class="wrap"><div class="beam"></div></div>
@@ -73,7 +1010,7 @@
     <div class="foot__grid">
       <div>
         <a class="brand" href="./index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l3 6a3 3 0 0 1-6 0z"/></svg><span>Sassy Foodie</span></a>
-        <p class="note" style="margin-top:1rem">Real food, cooked by hand, in Philadelphia.<br>Cooked by Chef Daija in Philadelphia, PA.</p>
+        <p class="note" style="margin-top:1rem">Soul food and seafood, cooked to order by one person.<br>Cooked by Chef Daija in West Philadelphia.</p>
       </div>
       <div>
         <h4>Order</h4>

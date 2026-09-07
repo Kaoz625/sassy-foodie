@@ -186,8 +186,8 @@ function renderMenu(data, menuName) {
 
 /* --- gallery ----------------------------------------------------------- */
 const gallery = readData('data/gallery.json');
-function renderGallery() {
-  const items = gallery.items || [];
+function renderGallery(limit) {
+  const items = (gallery.items || []).slice(0, limit || undefined);
   if (!items.length) {
     return `<div class="panel center rv">
       <span class="label">Gallery</span>
@@ -221,20 +221,20 @@ pages.push({
   file: 'index.html',
   title: 'Home',
   hero3d: true,
-  desc: `${site.chef} cooks and sells her own food in ${site.city}. Text an order, pay by Cash App. Real plates, no middleman.`,
+  desc: `${site.chef} cooks and sells her own soul food and seafood in ${site.city}. $25 platters, pre-order by text, pay by Cash App.`,
   body: `
   <section class="hero">
     <canvas id="hero-canvas" data-images="${esc(heroImgs)}" aria-hidden="true"></canvas>
     <div class="wrap hero__in">
       <span class="label">${esc(site.city)} &middot; Cooked to order</span>
       <h1>Food worth<br><em>fighting over.</em></h1>
-      <p class="lede">${esc(site.chef)} makes it herself &mdash; no ghost kitchen, no line cook, no shortcuts. You text the order. She cooks it. You eat like somebody loves you.</p>
+      <p class="lede">${esc(site.chef)} makes every plate herself &mdash; no ghost kitchen, no line cook, no shortcuts. You text the order. She cooks it. You eat like somebody loves you.</p>
       <div class="hero__cta">
         <a class="btn" href="menu.html">See the menu ${ICON.arrow}</a>
         <a class="btn btn--ghost" href="tel:${site.phoneIntl}">${ICON.phone} Text ${esc(site.phone)}</a>
       </div>
       <div class="hero__meta">
-        <span>Made by hand</span>
+        <span>$25 platters</span>
         <span>Cash App &middot; $${esc(site.cashtag)}</span>
         <span>Pickup &amp; local delivery</span>
       </div>
@@ -245,22 +245,70 @@ pages.push({
 
   <section>
     <div class="wrap">
+      <div class="grid grid--2" style="align-items:center;gap:var(--s5)">
+        <div class="rv">
+          <span class="label">01 &middot; The platter</span>
+          <h2>Twenty-five dollars.<br>A fifteen dollar deposit<br>holds it.</h2>
+          <p class="lede">Wings, baked mac and cheese, collard greens with smoked turkey necks, candied yams, and garlic butter rolls. It is the plate she built the business on.</p>
+          <p class="hero__cta" style="justify-content:flex-start">
+            <a class="btn" href="menu.html">Order a platter ${ICON.arrow}</a>
+          </p>
+        </div>
+        <figure class="rv" style="margin:0">
+          <img src="assets/img/platter-soul-food.jpg" width="1200" height="900"
+               alt="Fried chicken, baked mac and cheese with a browned crust, collard greens and a toasted garlic butter roll in a black takeout tray"
+               style="border-radius:var(--r-md);border:1px solid var(--ink-line)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="beam"></div></div>
+
+  <section>
+    <div class="wrap">
       <div class="sec-head rv">
-        <span class="label">01 &middot; The two sides</span>
+        <span class="label">02 &middot; What people text her back</span>
+        <h2>She screenshots<br>the good ones.</h2>
+        <p class="lede">These are real messages from real customers, posted by her, on her own page. No made-up reviews and no star ratings &mdash; just what people actually said.</p>
+      </div>
+      <div class="grid grid--3">
+        <blockquote class="panel rv" style="margin:0">
+          <p class="lede" style="color:var(--ivory)">&ldquo;Food so good I dam near cried&rdquo;</p>
+          <footer class="note">A customer, on the $25 platter</footer>
+        </blockquote>
+        <blockquote class="panel rv" style="margin:0">
+          <p class="lede" style="color:var(--ivory)">&ldquo;Girl, I dont know where to start&hellip; the garlic roll was perfection !!! And this Seafood Lasagna was amazing !!!!&rdquo;</p>
+          <footer class="note">A customer, on the seafood lasagna</footer>
+        </blockquote>
+        <blockquote class="panel rv" style="margin:0">
+          <p class="lede" style="color:var(--ivory)">&ldquo;The lasagna is good af&rdquo;</p>
+          <footer class="note">A customer, mid-plate</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="beam"></div></div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="label">03 &middot; The two sides</span>
         <h2>She is a Libra.<br>So there are two menus.</h2>
-        <p class="lede">Balance is the whole point. One side feeds you. The other side is for the grown folks who like to indulge. Same hands, same standards, two different nights.</p>
+        <p class="lede">Balance is the whole point. One side feeds everybody. The other is the infused side, for the grown folks who like to indulge. Same hands, same standards, two different nights.</p>
       </div>
       <div class="grid grid--2">
         <article class="panel rv">
           <span class="label">The Kitchen</span>
-          <h3>Real plates, cooked to order</h3>
-          <p class="note">Her everyday food &mdash; the plates people come back for and text her about at midnight. Order it, pick it up, or have it run to you locally.</p>
+          <h3>Platters, seafood, wings</h3>
+          <p class="note">Her everyday food &mdash; the plates people come back for and text her about at midnight. Pre-order, pick it up, or have it run to you locally.</p>
           <p style="margin-top:1.5rem"><a class="btn btn--wide" href="menu.html">Open The Kitchen ${ICON.arrow}</a></p>
         </article>
         <article class="panel rv">
           <span class="label">The Infusion &middot; 21+</span>
-          <h3>For those who like to indulge</h3>
-          <p class="note">Her infused side, kept separate on purpose. Age-gated, clearly labelled, and never mixed into a regular order by accident.</p>
+          <h3>For those who indulge</h3>
+          <p class="note">She makes her own infused butter and cooks with it. Kept behind its own door, age-gated, and never mixed into a regular order by accident.</p>
           <p style="margin-top:1.5rem"><a class="btn btn--ghost btn--wide" href="infusions.html">Open The Infusion ${ICON.arrow}</a></p>
         </article>
       </div>
@@ -272,7 +320,7 @@ pages.push({
   <section>
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="label">02 &middot; How it works</span>
+        <span class="label">04 &middot; How it works</span>
         <h2>Three steps. No app, no fees.</h2>
         <p class="lede">She runs this from her own kitchen and her own phone. The site just makes your order easy to read.</p>
       </div>
@@ -285,7 +333,7 @@ pages.push({
         <article class="panel rv">
           <span class="label label--dim">Step two</span>
           <h3>Send it as a text</h3>
-          <p class="note">One tap turns your order into a clean, itemised message straight to ${esc(site.phone)}. She replies with a time.</p>
+          <p class="note">One tap turns your order into a clean, itemized message to ${esc(site.phone)}. She replies with a time.</p>
         </article>
         <article class="panel rv">
           <span class="label label--dim">Step three</span>
@@ -302,12 +350,12 @@ pages.push({
   <section>
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="label">03 &middot; Straight from her kitchen</span>
+        <span class="label">05 &middot; Straight from her kitchen</span>
         <h2>Her food, her photos.</h2>
-        <p class="lede">Every picture on this site was taken by her. Nothing here is stock and nothing is generated. If you have not seen it on her page, it is not on this site.</p>
+        <p class="lede">Every picture on this site was taken by her. Nothing is stock and nothing is generated. If it has not come out of her kitchen, it is not on this page.</p>
       </div>
-      ${renderGallery()}
-      <p class="center" style="margin-top:2rem"><a class="btn btn--ghost" href="gallery.html">See more ${ICON.arrow}</a></p>
+      ${renderGallery(9)}
+      <p class="center" style="margin-top:2rem"><a class="btn btn--ghost" href="gallery.html">See all of it ${ICON.arrow}</a></p>
     </div>
   </section>`
 });
@@ -455,39 +503,66 @@ pages.push({
 pages.push({
   file: 'about.html',
   title: 'About Chef Daija',
-  desc: `${site.chef} cooks and sells her own food in ${site.city}. This is her story.`,
+  desc: `${site.chef} trained at Walnut Hill College and has cooked professionally for five years. She sells her own food in ${site.city}.`,
   body: `
   <section>
     <div class="wrap">
       <div class="sec-head rv">
         <span class="label">About</span>
         <h1>Chef Daija</h1>
+        <p class="lede">Restaurant-school trained. Five years in professional kitchens. Now cooking for herself, in ${esc(site.city)}.</p>
       </div>
-      <div class="panel rv" style="max-width:74ch;margin-inline:auto">
-        <p class="lede">She has never been casual about her food. Not once.</p>
-        <p>If you were around her and you did not eat what she cooked, it was a problem. Not a joke, not a bit &mdash; an actual argument. That is the tell. People who cook for a living because it pays do not fight you over a plate. People who cook because it is how they say something do.</p>
-        <p>So that is what you are buying here. Not catering. Not a ghost kitchen with her name stapled on it. One person, in ${esc(site.city)}, who makes every plate herself and takes it personally when it is right.</p>
-        <p>She is a Libra, and it shows in the work. Everything is about balance &mdash; heat against sweet, rich against sharp, one side of the menu against the other. She will not send a plate out that leans wrong. That is also why there are two menus on this site instead of one messy one: The Kitchen for everybody, The Infusion for the grown folks. Two pans on the same scale.</p>
+
+      <div class="grid grid--2" style="align-items:center;gap:var(--s5)">
+        <figure class="rv" style="margin:0">
+          <img src="assets/img/lobster-grits.jpg" width="1200" height="900"
+               alt="A split grilled lobster tail over grits with peppers, collard greens and grilled bread"
+               style="border-radius:var(--r-md);border:1px solid var(--ink-line)" loading="lazy" decoding="async">
+        </figure>
+        <div class="rv">
+          <p class="lede">She has never been casual about her food. Not once.</p>
+          <p>If you were around her and you did not eat what she cooked, it was a problem. Not a joke &mdash; an actual argument. That is the tell. People who cook because it pays do not fight you over a plate. People who cook because it is how they say something do.</p>
+          <p>She went to restaurant school at <strong>Walnut Hill College</strong> at 21, and has been in and out of professional kitchens for about five years since. Her own words, from her page:</p>
+        </div>
       </div>
+
+      <blockquote class="panel rv" style="max-width:70ch;margin:var(--s5) auto 0">
+        <p class="lede" style="color:var(--ivory)">&ldquo;If you know me you know I&rsquo;ve always had a passion for cooking ! I went to restaurant school at walnut hill college at 21! I&rsquo;ve been in and out of the culinary field for the last 5 years. I&rsquo;ve always loved cooking all my life and experimented with different flavors and ingredients!&rdquo;</p>
+        <footer class="note">&mdash; ${esc(site.chef)}, on her own page</footer>
+      </blockquote>
+
       <div class="beam"></div>
+
       <div class="sec-head rv">
-        <h2>How she works</h2>
+        <span class="label">Her word for it</span>
+        <h2>&ldquo;Snapped.&rdquo;</h2>
+        <p class="lede">It is what she says when a dish comes out the way she wanted. <em>&ldquo;I snappped on the seafood salad real crab meat and shrimp !!&rdquo;</em> &middot; <em>&ldquo;I&rsquo;m back in the kitchen snapping again !&rdquo;</em> If she says she snapped on it, order it.</p>
       </div>
+
       <div class="grid grid--3">
         <article class="panel rv">
           <span class="label label--dim">Cooked to order</span>
-          <p class="note">Nothing sits under a heat lamp. She cooks when the order comes in, which is why she asks you for a time.</p>
+          <p class="note">Nothing sits under a heat lamp. She cooks when the order comes in, which is why she asks you for a day and a time.</p>
         </article>
         <article class="panel rv">
           <span class="label label--dim">Her own hands</span>
-          <p class="note">No staff, no line, no franchise. If it came out of her kitchen, she made it.</p>
+          <p class="note">No staff, no line, no franchise. If it came out of her kitchen, she made it. That includes the catering trays.</p>
         </article>
         <article class="panel rv">
           <span class="label label--dim">Straight to her phone</span>
           <p class="note">Orders come to her by text and payment goes to her Cash App. Nobody takes a cut in the middle.</p>
         </article>
       </div>
-      <p class="center" style="margin-top:2.5rem"><a class="btn" href="menu.html">See what she is cooking ${ICON.arrow}</a></p>
+
+      <div class="beam"></div>
+
+      <div class="sec-head rv">
+        <span class="label">Balance</span>
+        <h2>Why there are two menus</h2>
+        <p class="lede">She is a Libra and it shows in the work &mdash; heat against sweet, rich against sharp, one side of the menu against the other. The Kitchen feeds everybody. The Infusion is for the grown folks. Two pans on the same scale, and she will not send a plate out that leans wrong.</p>
+      </div>
+
+      <p class="center" style="margin-top:2rem"><a class="btn" href="menu.html">See what she is cooking ${ICON.arrow}</a></p>
     </div>
   </section>`
 });

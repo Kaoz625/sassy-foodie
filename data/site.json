@@ -1,7 +1,7 @@
 {
   "brand": "Sassy Foodie",
   "chef": "Chef Daija",
-  "city": "Philadelphia, PA",
+  "city": "West Philadelphia",
   "phone": "267-616-0427",
   "phoneIntl": "+12676160427",
   "cashtag": "DaijaRob",
@@ -11,5 +11,6 @@
     "tiktok": "https://www.tiktok.com/@cookwdaijj"
   },
   "sign": "Libra",
-  "tagline": "Real food, cooked by hand, in Philadelphia."
+  "tagline": "Soul food and seafood, cooked to order by one person.",
+  "trained": "Walnut Hill College"
 }
