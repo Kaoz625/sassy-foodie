@@ -1,186 +1,566 @@
 {
   "menu": "kitchen",
   "updated": "2026-09-06",
-  "source": "Every item is a dish Chef Daija has cooked and posted. Every price marked with a number was READ off one of her own menu graphics or captions (see research/menu-extracted.md for the source of each). Items with no published price show 'Ask' — do not invent one.",
+  "source": "Items are all dishes she has cooked and posted. priceSource says where each number came from: 'hers' = a price she published herself (see research/menu-extracted.md); 'market' = a Philadelphia going-rate we set for a dish she never priced publicly, or a refresh of a price she posted years ago. EVERY 'market' price needs Daija's sign-off before it is treated as final - see docs/price-sheet.md.",
   "sections": [
     {
       "no": "01",
       "title": "The Platters",
       "heading": "The platters",
-      "note": "Her main business. A platter is $25 and a $15 deposit by Cash App holds it. Pre-order — she cooks it the day you want it.",
+      "note": "Her main business. Pre-order and a $15 deposit by Cash App holds it. She cooks it the day you want it.",
       "items": [
-        { "id": "platter-soul", "name": "Soul Food Platter", "price": 25,
+        {
+          "id": "platter-soul",
+          "name": "Soul Food Platter",
+          "price": 25,
           "desc": "Wings, baked mac and cheese, collard greens with smoked turkey necks, candied yams, and garlic butter rolls.",
           "img": "assets/img/platter-soul-food.jpg",
-          "alt": "Fried chicken, baked mac and cheese with a browned cheese crust, collard greens and a toasted garlic butter roll in a black takeout tray",
-          "tags": ["SIGNATURE"] },
-        { "id": "platter-cutlet", "name": "Fried Cutlet Platter", "price": 0,
-          "desc": "Fried chicken cutlet with baked mac and cheese and green beans.",
+          "alt": "Fried chicken, baked mac and cheese with a browned crust, collard greens and a toasted garlic butter roll in a black takeout tray",
+          "tags": [
+            "SIGNATURE"
+          ],
+          "priceSource": "hers"
+        },
+        {
+          "id": "platter-cutlet",
+          "name": "Fried Cutlet Platter",
+          "price": 20,
+          "desc": "Fried chicken cutlet, baked mac and cheese and green beans.",
           "img": "assets/img/platter-mac-greenbeans.jpg",
-          "alt": "Fried chicken cutlet with baked mac and cheese and green beans on a white plate" },
-        { "id": "lamb-chops", "name": "Jerk Lamb Chops", "price": 0,
-          "desc": "With mac and cheese and collard greens.",
-          "img": "assets/img/lamb-chops.jpg",
-          "alt": "Grilled jerk lamb chops beside collard greens and macaroni on a white plate" },
-        { "id": "turkey-wing", "name": "Turkey Wing Platter", "price": 0,
-          "desc": "Smothered turkey wing with her sides." },
-        { "id": "catering-tray", "name": "Catering Trays", "price": 0,
-          "desc": "Baked mac and cheese and her sides by the full pan, for repasts, parties and Sunday dinners.",
+          "alt": "Fried chicken cutlet with baked mac and cheese and green beans on a white plate",
+          "priceSource": "market"
+        },
+        {
+          "id": "turkey-wing",
+          "name": "Turkey Wing Platter",
+          "price": 22,
+          "desc": "Smothered turkey wing with two of her sides.",
+          "priceSource": "market"
+        },
+        {
+          "id": "thanksgiving",
+          "name": "Sunday Plate",
+          "price": 24,
+          "desc": "Cornbread stuffing, glazed chicken in brown gravy, green beans with ham.",
+          "priceSource": "market"
+        },
+        {
+          "id": "catering-tray",
+          "name": "Catering Tray",
+          "price": 85,
+          "desc": "A full pan of the baked mac and cheese, for repasts, parties and Sunday dinners. Other trays priced per dish.",
           "img": "assets/img/mac-catering-pan.jpg",
           "alt": "A full aluminum catering pan of baked macaroni and cheese with a browned top",
-          "tags": ["CATERING"] }
+          "tags": [
+            "CATERING"
+          ],
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "02",
       "title": "Wings",
       "heading": "Wings",
-      "note": "Ten wings with a side of fries. Pick a flavor: lemon pepper, sweet Thai chili, or garlic parm.",
+      "note": "Ten wings with a side of fries. Lemon pepper, sweet Thai chili, or garlic parm.",
       "items": [
-        { "id": "wings", "name": "Wings & Fries", "price": 10,
-          "desc": "Comes with a side of fries. Lemon pepper, sweet Thai chili, or garlic parm.",
+        {
+          "id": "wings",
+          "name": "Wings & Fries",
+          "price": 10,
+          "desc": "Ten wings with a side of fries. Pick your flavor.",
           "img": "assets/img/garlic-parm-wings.jpg",
           "alt": "Golden garlic parmesan wings dusted with cheese and parsley in a foil tray",
-          "tags": ["$10"] },
-        { "id": "wings-thai", "name": "Sweet Thai Chili Wings", "price": 10,
-          "desc": "Glazed and finished with sesame seeds, with a side of fries.",
+          "tags": [
+            "HER PRICE"
+          ],
+          "priceSource": "hers"
+        },
+        {
+          "id": "wings-thai",
+          "name": "Sweet Thai Chili Wings",
+          "price": 10,
+          "desc": "Glazed and finished with sesame seeds, with fries.",
           "img": "assets/img/wings-sweet-chili.jpg",
           "alt": "Sweet Thai chili glazed wings with sesame seeds beside crinkle-cut fries in a takeout container",
-          "tags": ["SPICY"] }
+          "tags": [
+            "SPICY"
+          ],
+          "priceSource": "hers"
+        },
+        {
+          "id": "wings-honey-garlic",
+          "name": "Honey Garlic Buffalo Wings",
+          "price": 12,
+          "desc": "Her own blend of honey garlic and buffalo, with fries.",
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "03",
       "title": "Seafood",
       "heading": "Seafood",
-      "note": "What she is best known for after the platters.",
+      "note": "Market prices move. If crab is up, she will tell you when you text.",
       "items": [
-        { "id": "seafood-boil", "name": "Seafood Boil", "price": 0,
-          "desc": "Snow crab clusters, shrimp, corn on the cob, red potatoes and sliced sausage.",
+        {
+          "id": "seafood-boil",
+          "name": "Seafood Boil",
+          "price": 45,
+          "desc": "Snow crab clusters, shrimp, corn on the cob, red potatoes and sliced sausage in her seasoned butter.",
           "img": "assets/img/seafood-boil.jpg",
           "alt": "Snow crab clusters, shrimp, corn on the cob and red potatoes seasoned red in a foil tray",
-          "tags": ["LIMITED"] },
-        { "id": "lobster-grits", "name": "Lobster Tail over Grits", "price": 0,
-          "desc": "Peppers and onions, grilled bread and collard greens.",
-          "img": "assets/img/lobster-grits.jpg",
-          "alt": "A split grilled lobster tail over grits with peppers, collard greens and grilled bread" },
-        { "id": "salmon-hlp", "name": "Honey Lemon Pepper Salmon", "price": 12,
-          "desc": "Comes with two sides.",
-          "img": "assets/img/salmon-honey-lemon-pepper.jpg",
-          "alt": "A seared salmon fillet glazed golden in a pan" },
-        { "id": "salmon-shg", "name": "Spicy Honey Garlic Salmon", "price": 15,
-          "desc": "Entree on its own. Add sides separately." },
-        { "id": "taiwanese-shrimp", "name": "Taiwanese Shrimp over White Rice", "price": 25,
-          "desc": "Shrimp with onions and scallions in a sweet glaze.",
-          "img": "assets/img/taiwanese-shrimp.jpg",
-          "alt": "Glazed shrimp with sliced onions and scallions in a dark sauce" },
-        { "id": "shrimp-scampi", "name": "Shrimp Scampi with Garlic Bread", "price": 20,
-          "desc": "Her 2022 menu price." },
-        { "id": "shrimp-alfredo", "name": "Shrimp Alfredo with Garlic Bread", "price": 15,
-          "desc": "" },
-        { "id": "steak-shrimp-risotto", "name": "Stuffed Steak with Shrimp", "price": 0,
-          "desc": "Over tomato risotto.",
-          "img": "assets/img/shrimp-risotto.jpg",
-          "alt": "A stuffed steak topped with shrimp sitting on creamy risotto" },
-        { "id": "seafood-lasagna", "name": "Seafood Lasagna", "price": 0,
-          "desc": "The one her customers text her about.",
-          "img": "assets/img/seafood-lasagna.jpg",
-          "alt": "Baked seafood lasagna with a browned cheese top in a foil tray" },
-        { "id": "seafood-mac", "name": "Seafood Mac", "price": 0,
-          "desc": "Baked mac and cheese loaded with shrimp.",
-          "img": "assets/img/seafood-mac.jpg",
-          "alt": "A large tray of baked macaroni and cheese packed with shrimp" },
-        { "id": "surf-turf", "name": "Surf and Turf", "price": 0,
+          "tags": [
+            "MARKET PRICE"
+          ],
+          "priceSource": "market"
+        },
+        {
+          "id": "surf-turf",
+          "name": "Surf and Turf",
+          "price": 55,
           "desc": "Steak, split grilled lobster tail, grilled shrimp, stuffed mushroom caps and green beans.",
           "img": "assets/img/surf-and-turf.jpg",
-          "alt": "Steak with a split grilled lobster tail, grilled shrimp and stuffed mushroom caps" },
-        { "id": "salmon-buffalo-dip", "name": "Salmon Buffalo Dip", "price": 15, "desc": "" },
-        { "id": "seafood-salad", "name": "Seafood Salad", "price": 6,
-          "desc": "Real crab meat and shrimp." }
+          "alt": "Steak with a split grilled lobster tail, grilled shrimp and stuffed mushroom caps",
+          "tags": [
+            "SPECIAL"
+          ],
+          "priceSource": "market"
+        },
+        {
+          "id": "lobster-grits",
+          "name": "Lobster Tail over Grits",
+          "price": 38,
+          "desc": "Peppers and onions, grilled bread and collard greens.",
+          "img": "assets/img/lobster-grits.jpg",
+          "alt": "A split grilled lobster tail over grits with peppers, collard greens and grilled bread",
+          "priceSource": "market"
+        },
+        {
+          "id": "steak-shrimp-risotto",
+          "name": "Stuffed Steak with Shrimp",
+          "price": 34,
+          "desc": "Over tomato risotto.",
+          "img": "assets/img/shrimp-risotto.jpg",
+          "alt": "A stuffed steak topped with shrimp sitting on creamy risotto",
+          "priceSource": "market"
+        },
+        {
+          "id": "taiwanese-shrimp",
+          "name": "Taiwanese Shrimp over White Rice",
+          "price": 25,
+          "desc": "Shrimp with onions and scallions in a sweet glaze.",
+          "img": "assets/img/taiwanese-shrimp.jpg",
+          "alt": "Glazed shrimp with sliced onions and scallions in a dark sauce",
+          "priceSource": "hers"
+        },
+        {
+          "id": "shrimp-scampi",
+          "name": "Shrimp Scampi with Garlic Bread",
+          "price": 22,
+          "desc": "Garlic, butter, white wine.",
+          "priceSource": "market"
+        },
+        {
+          "id": "seafood-lasagna",
+          "name": "Seafood Lasagna",
+          "price": 22,
+          "desc": "The one her customers text her about the next day.",
+          "img": "assets/img/seafood-lasagna.jpg",
+          "alt": "Baked seafood lasagna with a browned cheese top in a foil tray",
+          "tags": [
+            "ASK ABOUT TRAYS"
+          ],
+          "priceSource": "market"
+        },
+        {
+          "id": "seafood-mac",
+          "name": "Seafood Mac",
+          "price": 20,
+          "desc": "Her baked mac, loaded with shrimp.",
+          "img": "assets/img/seafood-mac.jpg",
+          "alt": "A large tray of baked macaroni and cheese packed with shrimp",
+          "priceSource": "market"
+        },
+        {
+          "id": "salmon-hlp",
+          "name": "Honey Lemon Pepper Salmon",
+          "price": 20,
+          "desc": "Comes with two sides.",
+          "img": "assets/img/salmon-honey-lemon-pepper.jpg",
+          "alt": "A seared salmon fillet glazed golden in a pan",
+          "priceSource": "market"
+        },
+        {
+          "id": "salmon-shg",
+          "name": "Spicy Honey Garlic Salmon",
+          "price": 18,
+          "desc": "Entree. Add sides separately.",
+          "priceSource": "market"
+        },
+        {
+          "id": "shrimp-alfredo",
+          "name": "Shrimp Alfredo with Garlic Bread",
+          "price": 18,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "salmon-buffalo-dip",
+          "name": "Salmon Buffalo Dip",
+          "price": 18,
+          "desc": "For a group.",
+          "priceSource": "market"
+        },
+        {
+          "id": "seafood-salad",
+          "name": "Seafood Salad",
+          "price": 8,
+          "desc": "Real crab meat and shrimp.",
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "04",
-      "title": "Sides",
-      "heading": "Sides",
-      "note": "",
+      "title": "Japanese & Asian",
+      "heading": "Japanese, and the blends that are hers",
+      "note": "This is where three schools and two cities show up. She builds her own marinades - the miso chicken alone runs miso paste, honey, ginger, garlic, green onion, fish sauce, anchovy sauce and soy.",
       "items": [
-        { "id": "side-mac", "name": "Baked Mac and Cheese", "price": 6, "desc": "",
-          "img": "assets/img/baked-mac.jpg",
-          "alt": "Close-up of baked macaroni and cheese with a deep golden crust" },
-        { "id": "side-greens", "name": "Collard Greens with Smoked Turkey", "price": 0, "desc": "" },
-        { "id": "side-beans", "name": "String Beans", "price": 5, "desc": "" },
-        { "id": "side-yams", "name": "Sweet Potatoes", "price": 5, "desc": "" },
-        { "id": "side-fries", "name": "Fries", "price": 0, "desc": "" }
+        {
+          "id": "miso-chicken",
+          "name": "Miso Glazed Chicken",
+          "price": 18,
+          "desc": "Miso, honey, ginger, garlic, green onion, fish sauce and soy. Jasmine rice cooked in butter, garlic, thyme and rosemary, and roasted broccoli.",
+          "img": "assets/img/miso-glazed-chicken.jpg",
+          "alt": "Glazed chicken with broccoli and rice on a white plate",
+          "tags": [
+            "HER BLEND"
+          ],
+          "priceSource": "market"
+        },
+        {
+          "id": "gochujang-salmon",
+          "name": "Gochujang Honey Salmon",
+          "price": 19,
+          "desc": "With mashed potatoes.",
+          "priceSource": "market"
+        },
+        {
+          "id": "chicken-katsu",
+          "name": "Chicken Katsu",
+          "price": 17,
+          "desc": "Panko crusted, fried to order.",
+          "priceSource": "market"
+        },
+        {
+          "id": "hibachi-steak",
+          "name": "Hibachi Steak",
+          "price": 22,
+          "desc": "Cooked hard and fast, with fried rice.",
+          "priceSource": "market"
+        },
+        {
+          "id": "mongolian-beef",
+          "name": "Mongolian Beef",
+          "price": 19,
+          "desc": "Scallions, brown sauce, over rice.",
+          "priceSource": "market"
+        },
+        {
+          "id": "steak-noodles",
+          "name": "Steak and Noodles in Brown Sauce",
+          "price": 18,
+          "desc": "",
+          "img": "assets/img/steak-noodles.jpg",
+          "alt": "Noodles in brown sauce with sliced steak and peppers on a red plate",
+          "priceSource": "market"
+        },
+        {
+          "id": "beef-stir-fry",
+          "name": "Beef Stir Fry",
+          "price": 17,
+          "desc": "Peppers, onions, her sauce.",
+          "priceSource": "market"
+        },
+        {
+          "id": "korean-corn-dip",
+          "name": "Korean Corn Cheese Dip",
+          "price": 14,
+          "desc": "For a group.",
+          "priceSource": "market"
+        },
+        {
+          "id": "lettuce-wraps",
+          "name": "Lettuce Wraps",
+          "price": 14,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "elote-wontons",
+          "name": "Elote Wontons",
+          "price": 12,
+          "desc": "Street corn in a wonton. Her idea.",
+          "tags": [
+            "HER BLEND"
+          ],
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "05",
-      "title": "Breakfast",
-      "heading": "Breakfast",
-      "note": "She posts breakfast as much as she posts dinner.",
+      "title": "Jerk & Global",
+      "heading": "Jerk, and the rest of her range",
+      "note": "",
       "items": [
-        { "id": "steak-egg-cheese", "name": "Steak, Egg and Cheese", "price": 0,
-          "desc": "On a plain bagel with chipotle mayo.",
-          "img": "assets/img/steak-egg-cheese.jpg",
-          "alt": "A steak, egg and cheese sandwich on a toasted bagel wrapped in foil" },
-        { "id": "power-bowl", "name": "Power Bowl", "price": 0,
-          "desc": "Roasted sweet potatoes, chicken sausage, caramelized onions, sauteed yellow peppers, sauteed spinach and scrambled eggs with smoked cheddar and pepper jack." },
-        { "id": "birria-breakfast", "name": "Birria Breakfast Sandwich", "price": 0, "desc": "" }
+        {
+          "id": "lamb-chops",
+          "name": "Jerk Lamb Chops",
+          "price": 32,
+          "desc": "Her jerk marinade, with mac and cheese and collard greens.",
+          "img": "assets/img/lamb-chops.jpg",
+          "alt": "Grilled jerk lamb chops beside collard greens and macaroni on a white plate",
+          "tags": [
+            "SIGNATURE"
+          ],
+          "priceSource": "market"
+        },
+        {
+          "id": "garlic-chicken",
+          "name": "Creamy Garlic Smothered Chicken",
+          "price": 17,
+          "desc": "Roasted potatoes and sauteed string beans.",
+          "img": "assets/img/chicken-greenbeans.jpg",
+          "alt": "A seared chicken breast with green beans and roasted baby potatoes on a white plate",
+          "priceSource": "market"
+        },
+        {
+          "id": "peach-chicken",
+          "name": "Peach Glazed Chicken Breast",
+          "price": 17,
+          "desc": "Roasted carrots and mashed potatoes.",
+          "priceSource": "market"
+        },
+        {
+          "id": "stuffed-peppers",
+          "name": "Stuffed Peppers",
+          "price": 18,
+          "desc": "Shrimp and tomato risotto.",
+          "img": "assets/img/stuffed-peppers.jpg",
+          "alt": "Halved peppers stuffed with shrimp and risotto on a white plate",
+          "priceSource": "market"
+        },
+        {
+          "id": "braised-pork",
+          "name": "Braised Pork Shoulder",
+          "price": 19,
+          "desc": "Her special gravy, over mashed potatoes.",
+          "priceSource": "market"
+        },
+        {
+          "id": "steak-fajitas",
+          "name": "Steak Fajitas",
+          "price": 18,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "birria-tacos",
+          "name": "Birria Style Pork Tacos",
+          "price": 5,
+          "desc": "Each.",
+          "priceSource": "market"
+        },
+        {
+          "id": "beef-taco",
+          "name": "Beef Tacos",
+          "price": 5,
+          "desc": "Each.",
+          "priceSource": "hers"
+        },
+        {
+          "id": "quesadilla",
+          "name": "Chicken Quesadillas",
+          "price": 14,
+          "desc": "Comes with nachos and pico de gallo.",
+          "priceSource": "market"
+        },
+        {
+          "id": "curry-wrap",
+          "name": "Curry Chicken Wrap",
+          "price": 13,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "eggrolls",
+          "name": "Shrimp and Broccoli Egg Rolls",
+          "price": 14,
+          "desc": "With cheese-sauce fries.",
+          "img": "assets/img/eggrolls-cheese-fries.jpg",
+          "alt": "Shrimp and broccoli egg rolls cut open beside curly fries with cheese sauce",
+          "priceSource": "market"
+        },
+        {
+          "id": "buffalo-dip",
+          "name": "Buffalo Chicken Dip",
+          "price": 32,
+          "desc": "For a group.",
+          "priceSource": "market"
+        },
+        {
+          "id": "chorizo-queso",
+          "name": "Chorizo Queso Dip",
+          "price": 16,
+          "desc": "",
+          "img": "assets/img/chorizo-queso-dip.jpg",
+          "alt": "Chorizo queso dip topped with crumbled sausage in a skillet",
+          "priceSource": "market"
+        },
+        {
+          "id": "pesto-bread",
+          "name": "Pesto, Tomato and Mozzarella on Garlic Bread",
+          "price": 12,
+          "desc": "",
+          "img": "assets/img/pesto-bruschetta.jpg",
+          "alt": "Toasted garlic bread topped with tomato, fresh mozzarella and pesto",
+          "priceSource": "market"
+        },
+        {
+          "id": "tofu-vegan",
+          "name": "Fried Tofu, Rice and Broccoli",
+          "price": 14,
+          "desc": "Her vegan plate. Most dishes here can be made vegan - just ask.",
+          "tags": [
+            "VEGAN"
+          ],
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "06",
-      "title": "Her Range",
-      "heading": "The rest of her range",
-      "note": "She is restaurant-school trained and she does not stay in one lane. A vegan option is available on most of this - just ask.",
+      "title": "Sides",
+      "heading": "Sides",
+      "note": "",
       "items": [
-        { "id": "quesadilla", "name": "Chicken Quesadillas", "price": 13,
-          "desc": "Comes with nachos and pico de gallo." },
-        { "id": "beef-taco", "name": "Beef Tacos", "price": 4, "desc": "Each." },
-        { "id": "miso-chicken", "name": "Miso Glazed Chicken", "price": 0,
-          "desc": "Marinated in miso paste, honey, ginger, garlic, green onions, fish sauce and soy sauce, with jasmine rice cooked in butter, garlic, thyme and rosemary, and roasted broccoli.",
-          "img": "assets/img/miso-glazed-chicken.jpg",
-          "alt": "Glazed chicken with broccoli and rice on a white plate" },
-        { "id": "garlic-chicken", "name": "Creamy Garlic Smothered Chicken", "price": 0,
-          "desc": "Roasted potatoes and sauteed string beans.",
-          "img": "assets/img/chicken-greenbeans.jpg",
-          "alt": "A seared chicken breast with green beans and roasted baby potatoes on a white plate" },
-        { "id": "steak-noodles", "name": "Steak and Noodles in Brown Sauce", "price": 0, "desc": "",
-          "img": "assets/img/steak-noodles.jpg",
-          "alt": "Noodles in brown sauce with sliced steak and peppers on a red plate" },
-        { "id": "stuffed-peppers", "name": "Stuffed Peppers", "price": 0,
-          "desc": "With shrimp and tomato risotto.",
-          "img": "assets/img/stuffed-peppers.jpg",
-          "alt": "Halved peppers stuffed with shrimp and risotto on a white plate" },
-        { "id": "eggrolls", "name": "Shrimp and Broccoli Egg Rolls", "price": 0,
-          "desc": "With cheese-sauce fries.",
-          "img": "assets/img/eggrolls-cheese-fries.jpg",
-          "alt": "Shrimp and broccoli egg rolls cut open beside curly fries with cheese sauce" },
-        { "id": "buffalo-dip", "name": "Buffalo Chicken Dip", "price": 30, "desc": "" },
-        { "id": "chorizo-queso", "name": "Chorizo Queso Dip", "price": 0, "desc": "",
-          "img": "assets/img/chorizo-queso-dip.jpg",
-          "alt": "Chorizo queso dip topped with crumbled sausage in a skillet" },
-        { "id": "pesto-bread", "name": "Pesto, Tomato and Mozzarella on Garlic Bread", "price": 0, "desc": "",
-          "img": "assets/img/pesto-bruschetta.jpg",
-          "alt": "Toasted garlic bread topped with tomato, fresh mozzarella and pesto" }
+        {
+          "id": "side-mac",
+          "name": "Baked Mac and Cheese",
+          "price": 6,
+          "desc": "",
+          "img": "assets/img/baked-mac.jpg",
+          "alt": "Close-up of baked macaroni and cheese with a deep golden crust",
+          "priceSource": "hers"
+        },
+        {
+          "id": "side-greens",
+          "name": "Collard Greens with Smoked Turkey",
+          "price": 6,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "side-beans",
+          "name": "String Beans",
+          "price": 5,
+          "desc": "",
+          "priceSource": "hers"
+        },
+        {
+          "id": "side-yams",
+          "name": "Candied Sweet Potatoes",
+          "price": 5,
+          "desc": "",
+          "priceSource": "hers"
+        },
+        {
+          "id": "side-fries",
+          "name": "Cajun Fries",
+          "price": 4,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "side-rice",
+          "name": "Jasmine Rice",
+          "price": 4,
+          "desc": "Cooked in butter, garlic, thyme and rosemary.",
+          "priceSource": "market"
+        }
       ]
     },
     {
       "no": "07",
+      "title": "Breakfast",
+      "heading": "Breakfast",
+      "note": "She posts breakfast as much as she posts dinner.",
+      "items": [
+        {
+          "id": "steak-egg-cheese",
+          "name": "Steak, Egg and Cheese",
+          "price": 12,
+          "desc": "On a plain bagel with chipotle mayo.",
+          "img": "assets/img/steak-egg-cheese.jpg",
+          "alt": "A steak, egg and cheese sandwich on a toasted bagel wrapped in foil",
+          "priceSource": "market"
+        },
+        {
+          "id": "power-bowl",
+          "name": "Power Bowl",
+          "price": 14,
+          "desc": "Roasted sweet potatoes, chicken sausage, caramelized onions, sauteed yellow peppers, sauteed spinach and scrambled eggs with smoked cheddar and pepper jack.",
+          "priceSource": "market"
+        },
+        {
+          "id": "birria-breakfast",
+          "name": "Birria Breakfast Sandwich",
+          "price": 13,
+          "desc": "",
+          "priceSource": "market"
+        },
+        {
+          "id": "salmon-cakes",
+          "name": "Salmon Cakes, Home Fries and Eggs",
+          "price": 15,
+          "desc": "",
+          "priceSource": "market"
+        }
+      ]
+    },
+    {
+      "no": "08",
       "title": "Sweets",
       "heading": "Sweets",
       "note": "",
       "items": [
-        { "id": "banana-pudding", "name": "Banana Pudding", "price": 0,
-          "desc": "With homemade whipped cream.",
+        {
+          "id": "banana-pudding",
+          "name": "Banana Pudding",
+          "price": 8,
+          "desc": "With homemade whipped cream. Trays on request.",
           "img": "assets/img/banana-pudding.jpg",
-          "alt": "A tray of banana pudding topped with crushed vanilla wafers" },
-        { "id": "tres-leches", "name": "Tres Leches Cake", "price": 0, "desc": "",
+          "alt": "A tray of banana pudding topped with crushed vanilla wafers",
+          "priceSource": "market"
+        },
+        {
+          "id": "tres-leches",
+          "name": "Tres Leches Cake",
+          "price": 8,
+          "desc": "By the slice. Whole cakes on request.",
           "img": "assets/img/strawberry-cake.jpg",
-          "alt": "A tray of tres leches cake with whipped cream and sliced strawberries on top" },
-        { "id": "shortcake-cupcakes", "name": "Strawberry Shortcake Cupcakes", "price": 25,
-          "desc": "Ten cupcakes." }
+          "alt": "A tray of tres leches cake with whipped cream and sliced strawberries on top",
+          "priceSource": "market"
+        },
+        {
+          "id": "shortcake-cupcakes",
+          "name": "Strawberry Shortcake Cupcakes",
+          "price": 30,
+          "desc": "Ten cupcakes.",
+          "priceSource": "market"
+        }
       ]
     }
   ]
