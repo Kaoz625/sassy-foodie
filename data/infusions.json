@@ -1,7 +1,7 @@
 {
   "menu": "infusion",
   "updated": "2026-09-06",
-  "source": "She has never published a price for the infusion side - her words are 'I can infuse your food for an additional price'. Every number here is a Philadelphia going rate we set, NOT hers. All of it needs her sign-off. The 'Shroom' items from her deleted 2021 dessert menu are deliberately absent - see research/menu-extracted.md section 4.",
+  "source": "Daija approved this menu, prices included, on 2026-09-06. priceSource says where each number came from: 'hers' = a price she gave us herself or published on one of her own menus; 'market' = a Philadelphia going rate we set and she then signed off on. The infused butter and oil is $75 on her own instruction - she raised it from the $35 we had guessed. The Shroom items are her own 2021 dessert-menu prices, transcribed in research/menu-extracted.md section 2C, and she approved putting them back on the menu. Full record in docs/price-sheet.md.",
   "sections": [
     {
       "no": "01",
@@ -22,13 +22,13 @@
         },
         {
           "id": "inf-butter",
-          "name": "Infused Butter",
-          "price": 35,
-          "desc": "The base she cooks with, by the jar. She makes it herself.",
+          "name": "Infused Butter or Oil",
+          "price": 75,
+          "desc": "The base she cooks with, made by her. One product, two forms - say butter or say oil when you order. Same price either way, and the oil is not an upgrade. A batch runs about 4oz; she works to the same weight whichever form you pick.",
           "tags": [
             "21+"
           ],
-          "priceSource": "market"
+          "priceSource": "hers"
         }
       ]
     },
@@ -71,6 +71,44 @@
             "FOR A GROUP"
           ],
           "priceSource": "market"
+        }
+      ]
+    },
+    {
+      "no": "03",
+      "title": "The Shroom Menu",
+      "heading": "Shrooms - a separate menu",
+      "note": "These are mushroom items, not cannabis. They have nothing to do with the infused butter above and they are not made with it. They come off her own 2021 dessert menu, at her own prices.",
+      "items": [
+        {
+          "id": "shroom-bar-whole",
+          "name": "Shroom Chocolate Bar, Whole",
+          "price": 60,
+          "desc": "Her chocolate bar, whole. Straight off her own dessert menu.",
+          "tags": [
+            "21+"
+          ],
+          "priceSource": "hers"
+        },
+        {
+          "id": "shroom-bar-half",
+          "name": "Shroom Chocolate Bar, Half",
+          "price": 40,
+          "desc": "The same bar, half the size.",
+          "tags": [
+            "21+"
+          ],
+          "priceSource": "hers"
+        },
+        {
+          "id": "shroom-hot-chocolate",
+          "name": "Shroom Hot Chocolate",
+          "price": 30,
+          "desc": "Her hot chocolate, from the same menu.",
+          "tags": [
+            "21+"
+          ],
+          "priceSource": "hers"
         }
       ]
     }

@@ -9,17 +9,30 @@
 /* --- 1. TOKENS ---------------------------------------------------------- */
 :root {
   /* colour */
-  --ink:        #0A0A0B;
-  --ink-2:      #121114;
-  --ink-3:      #1B191E;
-  --ink-line:   #2A272F;
+  /* Purple is her favourite colour, so purple is the voice. Brass is the
+     material and, more importantly, the LIGHT - every warm value here exists
+     to keep her food looking edible. A chromatic surround pushes an adjacent
+     NEUTRAL toward its complement, and the complement of violet is green.
+     Her banana pudding is 42% bright near-neutral. Green whipped cream reads
+     as spoiled dairy. That is why the light never goes violet.
+     Hues quoted below are OKLCH. Do not "correct" them to HSV. */
+  --ink:        #0B0910;
+  --ink-2:      #14101B;
+  --ink-3:      #1E1828;
+  --ink-line:   #382B48;
   --ivory:      #F4EDE4;
-  --ivory-dim:  #B8AEA3;
-  --gold:       #D9A94A;
-  --gold-hi:    #F2D08A;
-  --pom:        #A8202E;
-  --pom-lift:   #E0525E;
-  --blush:      #E7BBA8;
+  --ivory-dim:  #B8ABAF;
+
+  --violet:     #BB69E6;   /* OKLCH H 312.6 - red-leaning, never blue-violet */
+  --violet-hi:  #D9A6F5;
+  --brass:      #B98B3C;   /* the metal, and the light on the photographs */
+  --brass-hi:   #F0CE8E;
+  --heat:       #C02C4A;   /* SPICY / SOLD OUT. 3.50:1 on ink. The pomegranate
+                              red this replaced was 1.90:1 and never cleared
+                              the 3:1 floor for a UI border. */
+  --heat-lift:  #E4677E;
+  --infusion:   #E184B6;   /* the other pan of the scale */
+  --infusion-hi:#F1B8D5;
 
   /* Cash App green. Not ours and not palette-linked on purpose: it is a
      payment affordance, and it must stay recognisable if the brand changes. */
@@ -27,8 +40,8 @@
   --cash-hi:    #4CEB86;
 
   /* the accent indirection — the Infusion pages re-point this */
-  --accent:     var(--gold);
-  --accent-hi:  var(--gold-hi);
+  --accent:     var(--violet);
+  --accent-hi:  var(--violet-hi);
 
   /* type */
   --f-display: "Fraunces", "Iowan Old Style", Georgia, serif;
@@ -187,8 +200,10 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 /* the light source behind the hero — allowed under DESIGN.md §2 */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  /* brass, not accent: this glow lands behind the food ring, and 12% was
+     tuned for gold's low chroma. Warm light, and less of it. */
   background: radial-gradient(60% 55% at 50% 42%,
-              color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
+              color-mix(in srgb, var(--brass) 10%, transparent), transparent 70%);
 }
 .hero__in { position: relative; z-index: 2; text-align: center; max-width: 900px; }
 /* the copy must always beat the photos behind it */
@@ -268,8 +283,8 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
   padding: .25rem .5rem; border-radius: var(--r-sm);
   border: 1px solid var(--ink-line); color: var(--ivory-dim);
 }
-.pill--hot   { border-color: var(--pom); color: var(--pom-lift); }
-.pill--gold  { border-color: var(--accent); color: var(--accent); }
+.pill--hot   { border-color: var(--heat); color: var(--heat-lift); }
+.pill--accent{ border-color: var(--accent); color: var(--accent); }
 .pill--out   { border-color: var(--ink-line); color: var(--ivory-dim); opacity: .7; }
 
 /* --- 9. CARDS & MENU ---------------------------------------------------- */
@@ -411,10 +426,29 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 
 /* --- The Infusion side re-points the accent (DESIGN.md §2) -------------- */
 body.infusion {
-  --accent: var(--blush);
-  --accent-hi: #F3D5C7;
+  --accent: var(--infusion);
+  --accent-hi: var(--infusion-hi);
 }
 .btn.is-off { opacity: .45; cursor: not-allowed; }
+
+/* --- 17b. THE CHEF HERSELF ----------------------------------------------- */
+/* Both source frames are phone video stills, so they are tall and soft. The
+   wide one is cropped by the frame, not by scaling, and capped in height so a
+   portrait photo cannot push the whole page down. */
+.chef-shot { margin: 0 0 var(--s5); }
+.chef-shot img {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--r-md); border: 1px solid var(--ink-line);
+}
+/* Paired with copy rather than run full-bleed. They are honest phone stills
+   from her own kitchen, not commissioned photography, and blown up to hero
+   size that is exactly what they look like. At column width they read as
+   evidence, which is what they are. */
+.chef-shot--inset {
+  max-width: 72ch; margin-inline: auto;
+}
+.chef-shot--inset img { max-height: 38vh; object-fit: cover; object-position: 50% 42%; }
+.brand__logo { width: 34px; height: 34px; flex: none; color: var(--accent); }
 
 /* --- 17. SOUND TOGGLE ---------------------------------------------------- */
 /* Off by default and it says so: the mute slash shows until you turn it on. */

@@ -33,14 +33,14 @@ function init(canvas) {
   renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0a0a0b, 0.058);
+  scene.fog = new THREE.FogExp2(0x0b0910, 0.058);
 
   const camera = new THREE.PerspectiveCamera(46, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
   camera.position.set(0, 0, 9.2);
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-  const key = new THREE.PointLight(0xf2d08a, 60, 40); key.position.set(3, 4, 6); scene.add(key);
-  const rim = new THREE.PointLight(0xa8202e, 22, 40); rim.position.set(-5, -2, -3); scene.add(rim);
+  const key = new THREE.PointLight(0xf0ce8e, 60, 40); key.position.set(3, 4, 6); scene.add(key);
+  const rim = new THREE.PointLight(0xc02c4a, 22, 40); rim.position.set(-5, -2, -3); scene.add(rim);
 
   const world = new THREE.Group(); world.position.z = -2.2; scene.add(world);
 
@@ -68,7 +68,7 @@ function init(canvas) {
   for (let i = 0; i < COUNT; i++) {
     const a = (i / COUNT) * Math.PI * 2;
     const mat = new THREE.MeshStandardMaterial({
-      color: 0x1b191e, roughness: 0.85, metalness: 0.1,
+      color: 0x1e1828, roughness: 0.85, metalness: 0.1,
       transparent: true, opacity: 0.88, side: THREE.DoubleSide
     });
 
@@ -87,7 +87,7 @@ function init(canvas) {
         if (full !== src) loader.load(full, apply, undefined, () => {});
       });
     } else {
-      mat.color.set(0x2a2229); mat.metalness = 0.55; mat.roughness = 0.4;
+      mat.color.set(0x382b48); mat.metalness = 0.55; mat.roughness = 0.4;
     }
 
     const m = new THREE.Mesh(curvedPlane(2.1, 1.55), mat);
@@ -100,8 +100,8 @@ function init(canvas) {
 
   /* --- the Libra scale at the centre ---------------------------------- */
   const goldMat = new THREE.MeshStandardMaterial({
-    color: 0xd9a94a, roughness: 0.3, metalness: 0.9,
-    emissive: new THREE.Color(0xd9a94a), emissiveIntensity: 0.5
+    color: 0xf0ce8e, roughness: 0.3, metalness: 0.9,
+    emissive: new THREE.Color(0xf0ce8e), emissiveIntensity: 0.5
   });
   const scaleGrp = new THREE.Group(); world.add(scaleGrp);
 
@@ -148,7 +148,7 @@ function init(canvas) {
   const dustTex = new THREE.CanvasTexture(dot);
 
   const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({
-    color: 0xf2d08a, size: 0.055, map: dustTex, alphaTest: 0.02,
+    color: 0xf0ce8e, size: 0.055, map: dustTex, alphaTest: 0.02,
     transparent: true, opacity: 0.55,
     blending: THREE.AdditiveBlending, depthWrite: false
   }));

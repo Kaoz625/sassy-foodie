@@ -23,6 +23,19 @@ const ICON = {
 };
 
 /* --- layout ------------------------------------------------------------ */
+// Optional assets. The logo and the photographs of Daija herself are produced
+// in their own lanes; if a lane produced nothing, the page must simply not show
+// that block rather than ship a broken image.
+const hasAsset = (p) => existsSync(p);
+const HAS_LOGO = hasAsset('assets/logo-mark.svg');
+const chefFig = (name, alt, cls = '', style = '') => {
+  const f = `assets/img/${name}.jpg`;
+  if (!hasAsset(f)) return '';
+  return `<figure class="chef-shot${cls ? ' ' + cls : ''}"${style ? ` style="${style}"` : ''}>
+          <img src="${f}" alt="${esc(alt)}" loading="lazy" decoding="async">
+        </figure>`;
+};
+
 // A Cash App payment button. She has no card processor: the cashtag IS the checkout,
 // so every place we mention it should be a tap, not a string to copy by hand.
 const cashHref = (amt) => `https://cash.app/$${site.cashtag}${amt ? '/' + amt : ''}`;
@@ -48,7 +61,7 @@ function layout({ file, title, desc, body, head = '', bodyClass = '', hero3d = f
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(desc)}">
-<meta name="theme-color" content="#0A0A0B">
+<meta name="theme-color" content="#0B0910">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -69,7 +82,9 @@ ${head}
 
 <header class="nav">
   <div class="nav__in">
-    <a class="brand" href="./index.html">${ICON.scale}<span>${esc(site.brand)}</span></a>
+    <a class="brand" href="./index.html">${HAS_LOGO
+      ? `<img class="brand__logo" src="./assets/logo-mark.svg" alt="" width="34" height="34">`
+      : ICON.scale}<span>${esc(site.brand)}</span></a>
     <nav aria-label="Main">
       <ul class="nav__links" id="nav-links">
         ${NAV.map(([h, t]) => `<li><a href="${h}">${esc(t)}</a></li>`).join('\n        ')}
@@ -142,7 +157,7 @@ function dishCard(item, menuName) {
     ? `<img class="dish__img" src="${esc(item.img)}" alt="${esc(item.alt || item.name)}" loading="lazy" decoding="async">`
     : `<div class="dish__img--none" aria-hidden="true">${esc((item.name || '?').slice(0, 1))}</div>`;
   const tags = (item.tags || []).map(t => {
-    const cls = /SPIC|HOT/i.test(t) ? 'pill--hot' : /LIMIT|NEW/i.test(t) ? 'pill--gold' : '';
+    const cls = /SPIC|HOT/i.test(t) ? 'pill--hot' : /LIMIT|NEW/i.test(t) ? 'pill--accent' : '';
     return `<span class="pill ${cls}">${esc(t)}</span>`;
   }).join('');
   return `
@@ -529,6 +544,16 @@ pages.push({
 
   <section style="padding-top:0">
     <div class="wrap">
+      <div class="grid grid--2" style="align-items:center;gap:var(--s5);margin-bottom:var(--s6)">
+        ${chefFig('chef-at-work',
+          'Daija at a stainless steel prep table in black gloves, rolling out an egg roll wrapper on a green cutting board. Fryer baskets sit on the shelf behind her.',
+          'rv')}
+        <div class="rv">
+          <h2>One person, in a real kitchen.</h2>
+          <p>That is her at the prep table &mdash; gloves on, wrappers going out one at a time. There is no line behind her and no second cook. Every tray of egg rolls, every catering pan, every plate on this site came off that board.</p>
+          <p class="note">A phone still from her own kitchen. She films while she works, which is the only reason there is a picture of this at all.</p>
+        </div>
+      </div>
       <div class="grid grid--3">
         <article class="panel rv">
           <span class="label">Trained three times over</span>
@@ -564,6 +589,9 @@ pages.push({
       <div class="sec-head rv">
         <h2>She has never been casual about her food.</h2>
       </div>
+      ${chefFig('chef-hands',
+        'A hand steadying a chef knife through sliced tomato on a board, with a lime, a red onion and a small orange bowl beside it.',
+        'chef-shot--inset rv')}
       <div class="panel rv" style="max-width:72ch;margin-inline:auto">
         <p>If you were around her and you did not eat what she cooked, it was a problem. Not a joke &mdash; an actual argument. That is the tell. People who cook because it pays do not fight you over a plate. People who cook because it is how they say something do.</p>
         <p>Her own words, from her page:</p>
@@ -717,7 +745,7 @@ if (process.argv.includes('--dist')) {
   cpSync('src', 'dist/src', { recursive: true });
   cpSync('assets/img', 'dist/assets/img', { recursive: true });
   cpSync('assets/favicon.svg', 'dist/assets/favicon.svg');
-  if (existsSync('assets/logo.svg')) cpSync('assets/logo.svg', 'dist/assets/logo.svg');
+  for (const f of ['logo.svg', 'logo-mark.svg']) if (existsSync(`assets/${f}`)) cpSync(`assets/${f}`, `dist/assets/${f}`);
   // The music lane can legitimately produce nothing. A missing loop must not
   // break the deploy — audio.js removes its own control when the file 404s.
   if (existsSync('assets/audio')) cpSync('assets/audio', 'dist/assets/audio', { recursive: true });

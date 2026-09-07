@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Infusion (21+) — Sassy Foodie</title>
 <meta name="description" content="The infused menu from Chef Daija. Adults 21 and over only.">
-<meta name="theme-color" content="#0A0A0B">
+<meta name="theme-color" content="#0B0910">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Infusion (21+) — Sassy Foodie">
 <meta property="og:description" content="The infused menu from Chef Daija. Adults 21 and over only.">
@@ -24,7 +24,7 @@
 
 <header class="nav">
   <div class="nav__in">
-    <a class="brand" href="./index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l3 6a3 3 0 0 1-6 0z"/></svg><span>Sassy Foodie</span></a>
+    <a class="brand" href="./index.html"><img class="brand__logo" src="./assets/logo-mark.svg" alt="" width="34" height="34"><span>Sassy Foodie</span></a>
     <nav aria-label="Main">
       <ul class="nav__links" id="nav-links">
         <li><a href="menu.html">The Kitchen</a></li>
@@ -96,19 +96,19 @@
         <div class="dish__img--none" aria-hidden="true">I</div>
         <div class="dish__body">
           <div class="dish__top">
-            <h3 class="dish__name">Infused Butter</h3>
-            <span class="price">$35.00</span>
+            <h3 class="dish__name">Infused Butter or Oil</h3>
+            <span class="price">$75.00</span>
           </div>
-          <p class="dish__desc">The base she cooks with, by the jar. She makes it herself.</p>
+          <p class="dish__desc">The base she cooks with, made by her. One product, two forms - say butter or say oil when you order. Same price either way, and the oil is not an upgrade. A batch runs about 4oz; she works to the same weight whichever form you pick.</p>
           <div class="dish__tags"><span class="pill ">21+</span></div>
           <div class="dish__foot">
             <button class="btn btn--ghost" type="button"
-                   data-add="inf-butter" data-name="Infused Butter"
-                   data-price="35" data-menu="infusion">Add</button>
-                 <div class="qty" role="group" aria-label="Quantity for Infused Butter">
-                   <button type="button" data-step="inf-butter" data-dir="-1" aria-label="One less Infused Butter">&minus;</button>
+                   data-add="inf-butter" data-name="Infused Butter or Oil"
+                   data-price="75" data-menu="infusion">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Infused Butter or Oil">
+                   <button type="button" data-step="inf-butter" data-dir="-1" aria-label="One less Infused Butter or Oil">&minus;</button>
                    <output data-qty-for="inf-butter">0</output>
-                   <button type="button" data-step="inf-butter" data-dir="1" aria-label="One more Infused Butter">+</button>
+                   <button type="button" data-step="inf-butter" data-dir="1" aria-label="One more Infused Butter or Oil">+</button>
                  </div>
           </div>
         </div>
@@ -184,6 +184,81 @@
                    <button type="button" data-step="inf-salmon-dip" data-dir="-1" aria-label="One less Infused Salmon Buffalo Dip">&minus;</button>
                    <output data-qty-for="inf-salmon-dip">0</output>
                    <button type="button" data-step="inf-salmon-dip" data-dir="1" aria-label="One more Infused Salmon Buffalo Dip">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <div class="wrap"><div class="beam"></div></div>
+
+    <section class="menu-section">
+      <div class="sec-head rv">
+        <span class="label">03 The Shroom Menu</span>
+        <h2>Shrooms - a separate menu</h2>
+        <p class="lede">These are mushroom items, not cannabis. They have nothing to do with the infused butter above and they are not made with it. They come off her own 2021 dessert menu, at her own prices.</p>
+      </div>
+      <div class="grid grid--3">
+        
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shroom Chocolate Bar, Whole</h3>
+            <span class="price">$60.00</span>
+          </div>
+          <p class="dish__desc">Her chocolate bar, whole. Straight off her own dessert menu.</p>
+          <div class="dish__tags"><span class="pill ">21+</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shroom-bar-whole" data-name="Shroom Chocolate Bar, Whole"
+                   data-price="60" data-menu="infusion">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shroom Chocolate Bar, Whole">
+                   <button type="button" data-step="shroom-bar-whole" data-dir="-1" aria-label="One less Shroom Chocolate Bar, Whole">&minus;</button>
+                   <output data-qty-for="shroom-bar-whole">0</output>
+                   <button type="button" data-step="shroom-bar-whole" data-dir="1" aria-label="One more Shroom Chocolate Bar, Whole">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shroom Chocolate Bar, Half</h3>
+            <span class="price">$40.00</span>
+          </div>
+          <p class="dish__desc">The same bar, half the size.</p>
+          <div class="dish__tags"><span class="pill ">21+</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shroom-bar-half" data-name="Shroom Chocolate Bar, Half"
+                   data-price="40" data-menu="infusion">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shroom Chocolate Bar, Half">
+                   <button type="button" data-step="shroom-bar-half" data-dir="-1" aria-label="One less Shroom Chocolate Bar, Half">&minus;</button>
+                   <output data-qty-for="shroom-bar-half">0</output>
+                   <button type="button" data-step="shroom-bar-half" data-dir="1" aria-label="One more Shroom Chocolate Bar, Half">+</button>
+                 </div>
+          </div>
+        </div>
+      </article>
+      <article class="dish rv">
+        <div class="dish__img--none" aria-hidden="true">S</div>
+        <div class="dish__body">
+          <div class="dish__top">
+            <h3 class="dish__name">Shroom Hot Chocolate</h3>
+            <span class="price">$30.00</span>
+          </div>
+          <p class="dish__desc">Her hot chocolate, from the same menu.</p>
+          <div class="dish__tags"><span class="pill ">21+</span></div>
+          <div class="dish__foot">
+            <button class="btn btn--ghost" type="button"
+                   data-add="shroom-hot-chocolate" data-name="Shroom Hot Chocolate"
+                   data-price="30" data-menu="infusion">Add</button>
+                 <div class="qty" role="group" aria-label="Quantity for Shroom Hot Chocolate">
+                   <button type="button" data-step="shroom-hot-chocolate" data-dir="-1" aria-label="One less Shroom Hot Chocolate">&minus;</button>
+                   <output data-qty-for="shroom-hot-chocolate">0</output>
+                   <button type="button" data-step="shroom-hot-chocolate" data-dir="1" aria-label="One more Shroom Hot Chocolate">+</button>
                  </div>
           </div>
         </div>

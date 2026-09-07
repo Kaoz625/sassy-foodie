@@ -1,14 +1,19 @@
-# Price sheet — for Daija to approve
+# Price sheet — approved by Daija
 
-**Generated 2026-09-06.** These are the prices currently live on the site.
+**Approved 2026-09-06.** Daija signed off on every price on this sheet on that date. These are the prices live on the site, and they are final until she changes one.
 
-Two kinds of number are on this list. Read both columns before you sign off.
+Two kinds of number are still on this list, and the difference still matters. One kind she set herself. The other we set at Philadelphia market rates and she then approved. Both are approved. Only the origin is different.
+
+**Also confirmed by her on 2026-09-06:**
+
+- **Phone: 267-616-0427 is correct.** That is the number that reaches her, and it is the number on the site. The older 267-977-2072 from her 2020 flyers is history.
+- **Infused butter moved from $35 to $75, on her instruction.** We had guessed $35. She corrected it. See section 3.
 
 ---
 
-## 1. Prices that are already yours
+## 1. Prices that are already hers
 
-You published these yourself. We did not touch them.
+She published these herself. We did not touch them.
 
 | Section | Item | Price |
 |---|---|---|
@@ -25,15 +30,15 @@ You published these yourself. We did not touch them.
 
 ---
 
-## 2. Prices WE set at Philadelphia market rates
+## 2. Prices WE set at Philadelphia market rates — approved 2026-09-06
 
-You never published a price for these, or the one you published is several years old.
+She never published a price for these, or the one she published is several years old.
 
-We priced them at what this kind of food goes for in Philly in 2026, using your own
+We priced them at what this kind of food goes for in Philly in 2026, using her own
 
 price ladder as the anchor: sides $5-6, wings $10, platters $25.
 
-**Nothing here is final until you say so. Change any number and we will push it live.**
+**She approved this whole table on 2026-09-06.** Any number here can still be changed on a word from her, and we will push it live the same day.
 
 | Section | Item | Price |
 |---|---|---|
@@ -95,24 +100,41 @@ price ladder as the anchor: sides $5-6, wings $10, platters $25.
 
 ## 3. The infusion side
 
-You have never published a price for any of this. Every number is ours, and this one
+Approved 2026-09-06. The butter price is hers. The other four we set, and she approved them.
 
-needs your decision more than any other page on the site.
+| Section | Item | Price | Whose number |
+|---|---|---|---|
+| The Add-On | Any Dish, Infused | $20 | Ours, approved |
+| The Add-On | Infused Butter or Oil | **$75** | **Hers** |
+| What She Already Makes | Infused Garlic Parm Wings | $35 | Ours, approved |
+| What She Already Makes | Infused Buffalo Chicken Dip | $55 | Ours, approved |
+| What She Already Makes | Infused Salmon Buffalo Dip | $50 | Ours, approved |
 
-| Section | Item | Price |
-|---|---|---|
-| The Add-On | Any Dish, Infused | $20 |
-| The Add-On | Infused Butter | $35 |
-| What She Already Makes | Infused Garlic Parm Wings | $35 |
-| What She Already Makes | Infused Buffalo Chicken Dip | $55 |
-| What She Already Makes | Infused Salmon Buffalo Dip | $50 |
+**On the butter, in her words:** it is one product she makes in two forms, butter or oil, at the same $75 either way. The oil is a form you choose, not an upsell. She puts a batch at roughly 4oz and says so herself — *"i think its 4oz"* — so the site says "about 4oz" and never prints a guaranteed weight.
 
 ---
 
-## 4. Prices that MOVED from what you posted before
+## 4. The Shroom menu
 
-| Item | You posted | Now on the site | Why |
+Approved 2026-09-06 and now on the infusion page, in its own section with its own heading. These are **her own prices from her own 2021 dessert menu** — transcribed in `research/menu-extracted.md` section 2C, off `tt-cookwdaijj-016-7109445946089524522-poster.jpg`.
+
+They are mushroom items. They are **not** cannabis, they are not made with the infused butter, and they do not sit in the same section as it on the site. Every one carries the 21+ tag.
+
+| Section | Item | Price | Whose number |
 |---|---|---|---|
+| The Shroom Menu | Shroom Chocolate Bar, Whole | **$60** | **Hers** |
+| The Shroom Menu | Shroom Chocolate Bar, Half | **$40** | **Hers** |
+| The Shroom Menu | Shroom Hot Chocolate | **$30** | **Hers** |
+
+3 items.
+
+---
+
+## 5. Prices that MOVED from what she posted before
+
+| Item | She posted | Now on the site | Why |
+|---|---|---|---|
+| Infused Butter or Oil | $35 (our guess) | **$75** | **Her correction, 2026-09-06.** Our $35 was wrong. |
 | Honey Lemon Pepper Salmon (2 sides) | $12 | $20 | Salmon plus two sides at $12 is under food cost in 2026. Philly takeout is $18-24. |
 | Shrimp Alfredo with garlic bread | $15 (2019) | $18 | Seven years old. |
 | Shrimp Scampi with garlic bread | $20 (2022) | $22 | Four years old. |
@@ -122,15 +144,3 @@ needs your decision more than any other page on the site.
 | Seafood Salad | $6 side | $8 | Real crab meat. $6 does not cover it. |
 | Beef Tacos | $4 each | $5 each | Small refresh. |
 | Strawberry Shortcake Cupcakes | $25 for 10 | $30 for 10 | Ten from-scratch cupcakes. |
-
----
-
-## 5. Left off the site on purpose
-
-The **Shroom Chocolate Bar** ($60 / $40) and **Shroom Hot Chocolate** ($30) from your old
-
-dessert menu are not on the site and were not priced. Those read as psilocybin products,
-
-and they are not going on a public commercial page. That is a decision for you and Markus,
-
-not something we will put up by default.

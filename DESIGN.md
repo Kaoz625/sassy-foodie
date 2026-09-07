@@ -113,6 +113,19 @@ white "healthy meal prep" site. Food photography reads richest on dark.
 - If we do not have a photo for a dish, the card runs **type-only** on a warm
   ink panel. A missing photo is fine. A fake photo is not.
 
+**Daija herself.** The site had 32 photographs of her food and none of her
+working, on a page called *About Chef Daija*. Two frames of her at the prep
+table now open that page. Rules that come with them:
+
+- **Her face is hers to publish. Nobody else's is.** She is the business, so a
+  clear frame of her is fine. A customer, a friend or a family member who
+  happens to be in a scraped frame is not — testimonials stay text-only. If it
+  is not certain whose face it is, the frame does not ship.
+- The source frames are phone-video stills: tall, soft, and lit by a kitchen.
+  Crop them by eye, cap their height in CSS, and do not upscale to hide it.
+- Alt text describes what is *actually* in the frame — gloves, the green board,
+  the steel table. Not "chef cooking".
+
 ---
 
 ## 7. Components
@@ -126,6 +139,15 @@ white "healthy meal prep" site. Food photography reads richest on dark.
   is non-empty.
 - `.gate` — the 21+ interstitial for the Infusion menu.
 - `.pill` — mono tag: `SPICY`, `VEGAN`, `LIMITED`, `SOLD OUT`.
+- `.btn--cash` — the Cash App button. **The one colour on this site that is not
+  ours and does not follow the palette.** It stays Cash App green because it is
+  a payment affordance: people recognise the colour before they read the label,
+  and payment must never look like navigation. It also means a future rebrand
+  cannot accidentally disguise the checkout. Never print the cashtag as plain
+  text where a tap would do — the whole checkout is that one link.
+- `.nav__sound` — the music switch. See section 8b.
+- `.brand__logo` — her logo, inline SVG, coloured from `--accent` so it follows
+  the palette instead of fighting it.
 
 **States are mandatory.** Every interactive element gets hover, focus-visible
 (2px `--gold-hi` outline, 2px offset), active, and disabled. Focus is never
@@ -146,6 +168,26 @@ processing, no inventory system. The site must fit **how she actually sells**:
 This is a real, working, zero-fee checkout that she can run from her phone
 today. Do not replace it with a fake "Add to cart → Checkout" that goes nowhere.
 The site must never *look* like it takes card payments when it does not.
+
+---
+
+## 8b. Sound
+
+She asked for music. Music on a commercial page is normally a mistake, so it
+ships under hard rules rather than not at all:
+
+1. **It never autoplays.** Browsers block it, and a food page that starts
+   talking at you is a page that gets closed.
+2. **It costs nothing until it is wanted.** The `<audio>` element is not
+   created until the first tap, so a phone on cellular downloads zero bytes.
+3. **The control tells the truth.** It shows a muted speaker until sound is
+   actually playing, and it carries `aria-pressed`.
+4. **A dead control removes itself.** If the file is missing or the browser
+   refuses to decode it, the button deletes itself rather than sitting there
+   doing nothing.
+5. **The choice lasts the session, not for ever.** Every visit starts quiet.
+6. The track is original, generated, and credited in `assets/audio/README.md`.
+   Never a real song, never a sample of one — this is a commercial site.
 
 ---
 
