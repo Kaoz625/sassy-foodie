@@ -13,8 +13,12 @@ Static multi-page HTML. No framework, no bundler, no deploy-time build.
 
 ```bash
 node build.mjs                 # regenerate every .html from data/ + build.mjs
+node build.mjs --dist          # same, plus a deployable dist/ (5.8MB, ships only what is needed)
 python3 -m http.server 8099    # preview on http://127.0.0.1:8099
 ```
+
+**Always deploy `dist/`, never the repo root.** `assets/raw/` holds ~735MB of
+original scraped media and is gitignored; `--dist` leaves it out.
 
 There is no test suite. **Verification is visual and runs through headless
 Comet** — see "Verifying a change" below. A change is not done until you have
@@ -94,15 +98,49 @@ cd ~/.local/share/nyc-design-tools/comet-runtime
 SHOTDIR=/tmp/sf-shots node verify-sf.mjs                          # 3 widths, a11y audit
 ```
 
-`verify-sf.mjs` screenshots every page at 390 / 834 / 1440 and reports contrast
+`verify-sf.mjs` screenshots every page at one width per run and reports contrast
 failures, tap targets under 44px, missing alt text, horizontal overflow and
 console errors. Look at the images — do not just read the JSON.
 
+Two things about this harness that will otherwise cost you an hour:
+
+- **One `WIDTH` per invocation, on purpose.** Headless Comet dies part-way
+  through if you drive more than about eleven pages in a single browser
+  session. Run it three times, not once.
+- **Never trust a Playwright `fullPage` screenshot of this site.** The sticky
+  nav and the fixed order bar both use `backdrop-filter`, and beyond-viewport
+  capture renders large blank bands where content actually exists. It looks
+  exactly like a section that failed to render, and it is not. Use
+  `scroll-shots.mjs` instead, which takes ordinary viewport frames at scroll
+  offsets. If a section still looks empty, prove it in the DOM before you
+  "fix" anything.
+
 ## Deployment
 
-Cloudflare Pages, static, serving the repo root. **Never Vercel** (house rule).
-Backends go on Coolify (mac2) and Postgres on Neon, though this site needs
-neither.
+Cloudflare Pages project `sassy-foodie`, live at https://sassy-foodie.pages.dev.
+**Never Vercel** (house rule). Backends go on Coolify (mac2) and Postgres on
+Neon, though this site needs neither.
+
+```bash
+node build.mjs --dist
+set -a && . ~/.credentials/api-keys.env && set +a
+export CLOUDFLARE_API_TOKEN="$CLOUDFLARE_PAGES_TOKEN"
+wrangler pages deploy dist --project-name=sassy-foodie --branch main
+```
+
+Cloudflare serves pages extensionless and 308-redirects `/menu.html` to `/menu`.
+Internal links use `.html` so that local `python3 -m http.server` previewing
+works. That costs one cached redirect per page and is a deliberate trade.
+
+## Pricing — read before you touch a number
+
+Every menu item carries a `priceSource`:
+- `"hers"` — a price Daija published herself. **Do not change these.**
+- `"market"` — a Philadelphia going rate we set for a dish she never priced.
+
+`docs/price-sheet.md` is the approval document for her, and it is regenerated
+by hand, not by the build. If you change a price in `data/*.json`, update that
+sheet too or she will approve a number that is no longer live.
 
 ## GitHub auth gotcha
 
