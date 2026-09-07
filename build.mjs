@@ -49,6 +49,8 @@ function layout({ file, title, desc, body, head = '', bodyClass = '', hero3d = f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/favicon.svg">
 <link rel="stylesheet" href="./src/css/site.css">
 ${hero3d ? `<script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"}}
@@ -366,7 +368,7 @@ pages.push({
   title: 'The Kitchen',
   desc: `The Kitchen menu from ${site.chef} in ${site.city}. Build an order and text it straight to her.`,
   body: `
-  <section>
+  <section class="page-head">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="label">The Kitchen</span>
@@ -410,7 +412,7 @@ pages.push({
     </div>
   </div>
 
-  <section>
+  <section class="page-head">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="label">The Infusion &middot; 21+</span>

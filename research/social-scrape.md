@@ -125,8 +125,10 @@ Every one of these is read directly from a caption or an image. Full list with p
 | Fact | Source | Note |
 |---|---|---|
 | **Cash App: `$daijarob`** | SF-05 caption, 2025-11-29 | Current. This is how she takes deposits. |
-| **Phone for orders: 267-977-2072** | SF-45 caption, 2020-01-03 | **Six years old — confirm with her before it goes on the site.** |
+| **Phone for orders: 267-977-2072** | One caption (SF-45) plus two printed flyers (`-051.jpg`, `-055.jpg`) | Three independent sources agree. But the newest is 2020 — **confirm it still reaches her before it goes on the site.** |
 | Old handle `@dajj_r` | SF-60 caption, 2019 | Her first food handle. |
+| **A second business name: `YOUR CHOICE CUISINE`** | Printed on her 2020 menu flyer, `ig-sassyfoodiee-051.jpg` | She has traded under two names. **Ask her which one the site carries.** |
+| Her photographer | `@rafeeqjphoto` | She recommends him herself. |
 | Trained at Walnut Hill College | SF-05 | Restaurant school, started at 21. |
 | Serves **West Philadelphia** | SF-05, bio | Location tags on posts: Philadelphia, PA. One post tagged Brooklyn, NY (2025-06). |
 | Ordering model | SF-05, SF-43, SF-45 | Pre-order by DM or text → deposit by Cash App → pick up or delivery. Delivery started at 5pm. |
@@ -148,6 +150,14 @@ These are her actual customers, in her actual posts. I read them off the images.
 
 > **"Food so good I dam near cried 😩😂😍😘"**
 > — message screenshot she inset into `ig-sassyfoodiee-005.jpg`, post SF-05, 2025-11-29 — the platter relaunch post.
+
+> **"Yea that food was good as shit i ain't even get to take a pic them wings was on bean too"**
+> — DM screenshot in `ig-sassyfoodiee-060.jpg`, post SF-47, 2019-12-12. (Needs cleaning up before it goes on a public page, but it is real.) She replied *"Lol thank you 😊 🙏🙏🙏🙏"*.
+
+> **"How's the food ?"** — **"They was good!"**
+> — DM screenshot in `ig-sassyfoodiee-056.jpg`, same post.
+
+That is **five** separate customers, over six years, saying the same thing unprompted. She saves them all. It is the strongest asset she has after the food photos.
 
 Same DM screenshot also credits her photographer: **`@rafeeqjphoto`** — *"Go follow @rafeeqjphoto if you guys need a photo shoot !!!"*. If the site needs better hero photography, that is the person she already works with.
 

@@ -27,10 +27,16 @@ She has never published one complete menu. What exists is **four menu graphics p
 | **Side — Mac and cheese** | **$6** | | Same graphic | 2021-06-22 |
 | **Side — Seafood salad** | **$6** | | Same graphic | 2021-06-22 |
 | **Dessert — Banana pudding** | *no price printed* | Listed on the menu with no number next to it | Same graphic | 2021-06-22 |
-| **Shrimp Alfredo with a side of garlic bread** | **$15** | | Menu card in a video, `ig-sassyfoodiee-v036-poster.jpg` | 2019-11-24 |
+| **Honey lemon pepper salmon** | **$12** | "COMES WITH TWO SIDES" | Menu flyer, `ig-sassyfoodiee-051.jpg` | 2020-05-20 |
+| **Wings** | **$10** | "Comes with a side of fries". Three flavours: **Lemon pepper · Sweet Thai chili · Garlic parm** | Same flyer | 2020-05-20 |
+| **Chicken quesadillas** | **$13** | "come with nachos and pico de Gallo" | Text flyer, `ig-sassyfoodiee-054.jpg` | 2020-01-03 |
+| **Beef tacos** | **$4 each** | "They're not mini tacos" | Same flyer | 2020-01-03 |
+| **Shrimp Alfredo with a side of garlic bread** | **$15** | | Menu card, `ig-sassyfoodiee-066.jpg` | 2019-11-24 |
 | **Garlic parm wings** | **$10** | "will come with a side of Cajun fries" | Caption, SF-56 | 2019-08-11 |
 
-**That is 17 real prices** on 16 items (the shroom bar has two).
+**That is 22 real prices** on 21 items (the shroom bar has two).
+
+**Her own price history on wings is consistent: $10, with fries, twice, a year apart.** That is the most reliable number she has.
 
 ---
 
@@ -97,7 +103,56 @@ Two photos of shrimp fettuccine alfredo split by a text banner.
 SHRIMP ALFREDO WITH A SIDE OF GARLIC BREAD FOR $15
 ```
 
-### E. `ig-sassyfoodiee-065.jpg` — post SF-50, 2019-12-05 — a single-item order flyer
+### E. `ig-sassyfoodiee-051.jpg` — post SF-43, 2020-05-20 — **a full dated menu, and a second business name**
+Salmon-pink card with three photos of her takeout boxes along the top. This is the most complete menu she has ever posted.
+
+```
+MENU FOR 5/22-5/24
+
+HONEY LEMON PEPPER SALMON
+COMES WITH TWO SIDES ( $12)
+
+Wings ( $10)
+Comes with a side of fries
+Lemon pepper
+Sweet Thai chili
+Garlic parm
+
+Sides
+Mac and cheese
+Sweet potatoes
+Fries
+
+Text 267-977-2072 to place order
+
+YOUR CHOICE CUISINE
+```
+
+**Note the name at the bottom: `YOUR CHOICE CUISINE`.** That is a second trading name she has used, separate from "Sassy Foodie". Ask her which one the site should carry — it may be a former name, or one she still wants.
+
+This flyer also confirms the phone number as the **ten-digit 267-977-2072**, printed cleanly. The eleven-digit version on the seafood-lasagna flyer is a typo.
+
+### F. `ig-sassyfoodiee-054.jpg` — post SF-45, 2020-01-03 — text-only order flyer
+
+```
+Friday , Saturday and Sunday I will be selling chicken quesadillas and tacos !
+Chicken quesadillas are $13 and come with nachos and pico de Gallo
+The tacos will be beef tacos for $4 each ! They're not mini tacos
+```
+The last line runs off the bottom edge of the image, so there is one more sentence I cannot read.
+
+### G. `ig-sassyfoodiee-055.jpg` — post SF-46, 2019-12-12 — wing flavour flyer
+
+```
+GARLIC PARM
+LEMON PEPPER
+AND SWEET THAI CHILI
+ARE AVAILABLE
+
+CALL OR TEXT 267-977-2072 TO ORDER
+```
+
+### H. `ig-sassyfoodiee-065.jpg` — post SF-50, 2019-12-05 — a single-item order flyer
 A full foil tray of baked seafood lasagna, red banner across it. No price, but it shows exactly how she runs a drop.
 
 ```
@@ -228,7 +283,8 @@ Read straight from her posts:
 | | |
 |---|---|
 | **Order by** | DM on Instagram, or text |
-| **Phone in a post** | **267-977-2072** (caption, SF-45, 2020-01-03). Her own flyer `ig-sassyfoodiee-065.jpg` prints **267-977-20272** — eleven digits, so one of them is a typo she made. `(INFERRED)` the real number is the ten-digit **267-977-2072**. Both are six years old. **Confirm with her before publishing either.** |
+| **Phone** | **267-977-2072.** Printed cleanly on two separate flyers (`ig-sassyfoodiee-051.jpg`, `ig-sassyfoodiee-055.jpg`) and typed in a caption (SF-45). The eleven-digit `267-977-20272` on `ig-sassyfoodiee-065.jpg` is a typo she made on that one flyer. The number is six years old — **confirm it still reaches her before publishing.** |
+| **Second business name** | **`YOUR CHOICE CUISINE`**, printed at the bottom of the 2020 menu flyer. Ask her whether the site is Sassy Foodie, Your Choice Cuisine, or both. |
 | **Pay by** | Cash App — **`$daijarob`** |
 | **Deposit** | $15 down on a $25 platter |
 | **Pickup** | Yes — the 2022 flyer says *"Pick only will be available!!!!"*; the 2026 caption says *"$25 for a pull up for a plate"* |

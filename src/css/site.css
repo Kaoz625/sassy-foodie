@@ -142,6 +142,7 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
   max-width: var(--maxw); margin-inline: auto; padding-inline: var(--s3);
 }
 .brand {
+  min-height: 44px;
   font-family: var(--f-display); font-size: 1.15rem; font-weight: 600;
   font-variation-settings: "SOFT" 60, "WONK" 1;
   text-decoration: none; letter-spacing: -.01em;
@@ -181,6 +182,14 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
               color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
 }
 .hero__in { position: relative; z-index: 2; text-align: center; max-width: 900px; }
+/* the copy must always beat the photos behind it */
+.hero__in::before {
+  content: ""; position: absolute; inset: -12% -18%; z-index: -1; pointer-events: none;
+  background: radial-gradient(58% 52% at 50% 48%,
+              color-mix(in srgb, var(--ink) 92%, transparent) 0%,
+              color-mix(in srgb, var(--ink) 78%, transparent) 45%,
+              transparent 78%);
+}
 .hero h1 { margin-bottom: var(--s3); }
 .hero h1 em { font-style: italic; color: var(--accent); font-variation-settings: "SOFT" 80, "WONK" 1; }
 .hero .lede { margin-inline: auto; max-width: 54ch; }
@@ -268,7 +277,7 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 
 .qty { display: flex; align-items: center; border: 1px solid var(--ink-line); border-radius: var(--r-sm); }
 .qty button {
-  width: 40px; height: 40px; background: none; border: 0; cursor: pointer;
+  width: 44px; height: 44px; background: none; border: 0; cursor: pointer;
   color: var(--ivory-dim); font-size: 1.1rem; line-height: 1;
   transition: color .2s var(--ease);
 }
@@ -384,3 +393,11 @@ body.infusion {
 .btn.is-off { opacity: .45; cursor: not-allowed; }
 .otable .pill { margin-left: .4rem; vertical-align: middle; }
 .otable .qty { display: inline-flex; }
+
+/* --- menu sections sit INSIDE a section, so they must not pay the
+       full section padding twice - it pushed the first dish below the fold -- */
+.menu-section { padding-block: 0; margin-bottom: var(--s5); }
+.menu-section .sec-head { margin-bottom: var(--s4); }
+/* the page-title block on inner pages does not need hero-sized breathing room */
+.page-head { padding-bottom: 0; }
+.page-head .sec-head { margin-bottom: var(--s4); }
