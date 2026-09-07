@@ -21,6 +21,11 @@
   --pom-lift:   #E0525E;
   --blush:      #E7BBA8;
 
+  /* Cash App green. Not ours and not palette-linked on purpose: it is a
+     payment affordance, and it must stay recognisable if the brand changes. */
+  --cash:       #00D64F;
+  --cash-hi:    #4CEB86;
+
   /* the accent indirection — the Infusion pages re-point this */
   --accent:     var(--gold);
   --accent-hi:  var(--gold-hi);
@@ -150,6 +155,7 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 }
 .brand svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
 
+.nav__in > nav { margin-left: auto; flex: none; }
 .nav__links { display: flex; align-items: center; gap: var(--s3); list-style: none; margin: 0; padding: 0; }
 .nav__links a {
   text-decoration: none; font-size: .9rem; color: var(--ivory-dim);
@@ -157,6 +163,9 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 }
 .nav__links a:hover { color: var(--ivory); }
 .nav__links a[aria-current="page"] { color: var(--accent); }
+/* .nav__links a out-specifies .btn, which stripped the Order pill's side
+   padding and let its label run into the border. Put it back. */
+.nav__links li .btn { padding-inline: var(--s3); white-space: nowrap; }
 .nav__links a[aria-current="page"]::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0;
   height: 1px; background: var(--accent);
@@ -200,8 +209,17 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
   margin-top: var(--s5); font-family: var(--f-mono); font-size: .72rem;
   text-transform: uppercase; letter-spacing: .14em; color: var(--ivory-dim);
 }
-.hero__meta span { display: flex; align-items: center; gap: .5rem; }
-.hero__meta span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+.hero__meta > * { display: flex; align-items: center; gap: .5rem; }
+.hero__meta > *::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex: none; }
+/* the cashtag is a tap, not a string to write down */
+.hero__cash {
+  color: var(--ivory-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.hero__cash:hover, .hero__cash:focus-visible { color: var(--cash); border-bottom-color: var(--cash); }
+.hero__cash svg { width: 15px; height: 15px; flex: none; }
 
 /* --- 7. THE BEAM (scale motif) ------------------------------------------ */
 .beam { position: relative; height: 1px; background: var(--ink-line); margin-block: var(--s5); overflow: visible; }
@@ -236,6 +254,12 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
 .btn--ghost { background: transparent; color: var(--accent); }
 .btn--ghost:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent-hi); }
 .btn--wide { width: 100%; }
+.btn--cash {
+  background: var(--cash);
+  border-color: var(--cash);
+  color: #04210C;
+}
+.btn--cash:hover { background: var(--cash-hi); border-color: var(--cash-hi); color: #04210C; }
 .btn svg { width: 16px; height: 16px; flex: none; }
 
 .pill {
@@ -391,6 +415,32 @@ body.infusion {
   --accent-hi: #F3D5C7;
 }
 .btn.is-off { opacity: .45; cursor: not-allowed; }
+
+/* --- 17. SOUND TOGGLE ---------------------------------------------------- */
+/* Off by default and it says so: the mute slash shows until you turn it on. */
+.nav__sound {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-sm);
+  color: var(--ivory-dim);
+  cursor: pointer;
+  flex: none;
+  transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.nav__sound svg { width: 19px; height: 19px; }
+.nav__sound:hover, .nav__sound:focus-visible { color: var(--accent); border-color: var(--accent); }
+.nav__sound .wave { opacity: 0; transition: opacity .25s var(--ease); }
+.nav__sound .mute { opacity: .8; }
+.nav__sound.is-on { color: var(--accent); border-color: var(--accent); }
+.nav__sound.is-on .mute { opacity: 0; }
+.nav__sound.is-on .wave { opacity: 1; }
+.nav__sound.is-on .wave--2 { animation: sf-pulse 2.4s var(--ease) infinite; }
+@keyframes sf-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) {
+  .nav__sound.is-on .wave--2 { animation: none; }
+}
 .otable .pill { margin-left: .4rem; vertical-align: middle; }
 .otable .qty { display: inline-flex; }
 

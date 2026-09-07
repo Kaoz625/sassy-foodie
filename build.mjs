@@ -17,11 +17,18 @@ const ICON = {
   scale: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l3 6a3 3 0 0 1-6 0z"/></svg>`,
   menu:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>`,
   phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>`,
-  cash:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>`,
+  cash:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M13.6 8.4a3.6 3.6 0 0 0-4.6.5c-.9 1.1-.3 2.3 1.1 2.8l2.4.8c1.4.5 2 1.7 1.1 2.8a3.6 3.6 0 0 1-4.6.5"/><path d="M12.7 6.4l-.4 1.6M11.7 16l-.4 1.6"/></svg>`,
+  sound: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="wave wave--2" d="M18.5 5.5a9 9 0 0 1 0 13"/><path class="mute" d="M22 9l-6 6M16 9l6 6"/></svg>`,
   arrow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`
 };
 
 /* --- layout ------------------------------------------------------------ */
+// A Cash App payment button. She has no card processor: the cashtag IS the checkout,
+// so every place we mention it should be a tap, not a string to copy by hand.
+const cashHref = (amt) => `https://cash.app/$${site.cashtag}${amt ? '/' + amt : ''}`;
+const cashBtn = (label = `Pay $${site.cashtag} on Cash App`, cls = '') =>
+  `<a class="btn btn--cash${cls ? ' ' + cls : ''}" href="${cashHref()}" target="_blank" rel="noopener noreferrer">${ICON.cash} ${esc(label)}</a>`;
+
 const NAV = [
   ['menu.html', 'The Kitchen'],
   ['infusions.html', 'Infusions'],
@@ -69,6 +76,7 @@ ${head}
         <li><a class="btn btn--ghost" href="order.html">Order &middot; <span data-order-count>0</span></a></li>
       </ul>
     </nav>
+    <button class="nav__sound" type="button" data-sound aria-pressed="false" aria-label="Turn the music on">${ICON.sound}</button>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">${ICON.menu}</button>
   </div>
 </header>
@@ -119,6 +127,7 @@ ${body}
 
 <script src="./src/js/order.js"></script>
 <script src="./src/js/site.js"></script>
+<script src="./src/js/audio.js"></script>
 ${hero3d ? `<script type="module" src="./src/js/hero3d.js"></script>` : ''}
 </body>
 </html>
@@ -237,7 +246,7 @@ pages.push({
       </div>
       <div class="hero__meta">
         <span>Japanese &middot; Jerk &middot; Soul food</span>
-        <span>Cash App &middot; $${esc(site.cashtag)}</span>
+        <a class="hero__cash" href="${cashHref()}" target="_blank" rel="noopener noreferrer">${ICON.cash} Cash App &middot; $${esc(site.cashtag)}</a>
         <span>Pickup &amp; local delivery</span>
       </div>
     </div>
@@ -340,7 +349,8 @@ pages.push({
         <article class="panel rv">
           <span class="label label--dim">Step three</span>
           <h3>Pay by Cash App</h3>
-          <p class="note">Send it to <strong>$${esc(site.cashtag)}</strong>. That is the whole checkout. No card processor takes a cut of her food.</p>
+          <p class="note">One tap opens Cash App on her cashtag. That is the whole checkout &mdash; no card processor takes a cut of her food.</p>
+          <p style="margin-top:1.25rem">${cashBtn('Pay $' + site.cashtag, 'btn--wide')}</p>
         </article>
       </div>
       <p class="center" style="margin-top:2rem"><a class="btn" href="order.html">Start an order ${ICON.arrow}</a></p>
@@ -484,7 +494,7 @@ pages.push({
 
           <div class="stack" style="margin-top:1.5rem">
             <a class="btn btn--wide" id="btn-sms" href="#">${ICON.phone} Send order by text</a>
-            <a class="btn btn--ghost btn--wide" id="btn-cash" href="https://cash.app/$${esc(site.cashtag)}" target="_blank" rel="noopener noreferrer">${ICON.cash} Pay with Cash App &middot; $${esc(site.cashtag)}</a>
+            <a class="btn btn--cash btn--wide" id="btn-cash" href="${cashHref()}" target="_blank" rel="noopener noreferrer">${ICON.cash} Pay with Cash App &middot; $${esc(site.cashtag)}</a>
           </div>
 
           <p class="note" style="margin-top:1.5rem">Send the text first and wait for her to confirm the total and the time. Pay after she confirms &mdash; that way nothing is paid for a plate she cannot make that day.</p>
@@ -522,7 +532,7 @@ pages.push({
       <div class="grid grid--3">
         <article class="panel rv">
           <span class="label">Trained three times over</span>
-          <p class="note">Three culinary schools, starting with <strong>Walnut Hill College</strong> at 21. Each one taught her something the others did not &mdash; which is why her range does not look like one school&rsquo;s house style.</p>
+          <p class="note">Three culinary schools, the first at 21 and one of them <strong>in New York</strong>. Each taught her something the others did not &mdash; which is why her range does not look like any one school&rsquo;s house style.</p>
         </article>
         <article class="panel rv">
           <span class="label">Two cities</span>
@@ -644,7 +654,7 @@ pages.push({
           <span class="label">Payment</span>
           <h3>Cash App &middot; $${esc(site.cashtag)}</h3>
           <p class="note">Pay after she confirms your order and total. There is no card checkout on this site, and there are no processing fees taken out of her food.</p>
-          <p style="margin-top:1.5rem"><a class="btn btn--ghost btn--wide" href="https://cash.app/$${esc(site.cashtag)}" target="_blank" rel="noopener noreferrer">${ICON.cash} Open Cash App</a></p>
+          <p style="margin-top:1.5rem">${cashBtn('Pay $' + site.cashtag + ' on Cash App', 'btn--wide')}</p>
         </div>
       </div>
       <div class="beam"></div>
@@ -707,6 +717,10 @@ if (process.argv.includes('--dist')) {
   cpSync('src', 'dist/src', { recursive: true });
   cpSync('assets/img', 'dist/assets/img', { recursive: true });
   cpSync('assets/favicon.svg', 'dist/assets/favicon.svg');
+  if (existsSync('assets/logo.svg')) cpSync('assets/logo.svg', 'dist/assets/logo.svg');
+  // The music lane can legitimately produce nothing. A missing loop must not
+  // break the deploy — audio.js removes its own control when the file 404s.
+  if (existsSync('assets/audio')) cpSync('assets/audio', 'dist/assets/audio', { recursive: true });
   writeFileSync('dist/_headers',
     '/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n' +
     '/src/*\n  Cache-Control: public, max-age=86400\n' +
