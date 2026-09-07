@@ -399,5 +399,7 @@ body.infusion {
 .menu-section { padding-block: 0; margin-bottom: var(--s5); }
 .menu-section .sec-head { margin-bottom: var(--s4); }
 /* the page-title block on inner pages does not need hero-sized breathing room */
-.page-head { padding-bottom: 0; }
+.page-head { padding-block: clamp(var(--s5), 6vw, var(--s6)) 0; }
 .page-head .sec-head { margin-bottom: var(--s4); }
+/* the page title does not need hero scale - the dishes are the point */
+.page-head h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); }

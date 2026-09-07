@@ -373,7 +373,7 @@ pages.push({
       <div class="sec-head rv">
         <span class="label">The Kitchen</span>
         <h1>What she is cooking</h1>
-        <p class="lede">Add what you want, then send it as one text. She confirms the time and you pay by Cash App. Prices shown are the ones she has posted herself &mdash; anything marked <em>Ask</em> changes with the market, so text her for today's number.</p>
+        <p class="lede">Add what you want, then send it as one text. She confirms the time and the total, and you pay by Cash App. Seafood moves with the market &mdash; if crab is up that week, she will tell you before she cooks.</p>
       </div>
       ${renderMenu(kitchen, 'kitchen')}
     </div>
