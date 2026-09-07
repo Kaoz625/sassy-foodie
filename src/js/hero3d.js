@@ -90,7 +90,7 @@ function init(canvas) {
       mat.color.set(0x2a2229); mat.metalness = 0.55; mat.roughness = 0.4;
     }
 
-    const m = new THREE.Mesh(curvedPlane(1.75, 1.3), mat);
+    const m = new THREE.Mesh(curvedPlane(2.1, 1.55), mat);
     m.position.set(Math.cos(a) * RADIUS, Math.sin(i * 1.7) * 0.55, Math.sin(a) * RADIUS);
     m.rotation.y = -a + Math.PI / 2;
     m.userData.baseY = m.position.y;
@@ -99,7 +99,10 @@ function init(canvas) {
   }
 
   /* --- the Libra scale at the centre ---------------------------------- */
-  const goldMat = new THREE.MeshStandardMaterial({ color: 0xd9a94a, roughness: 0.28, metalness: 1 });
+  const goldMat = new THREE.MeshStandardMaterial({
+    color: 0xd9a94a, roughness: 0.3, metalness: 0.9,
+    emissive: new THREE.Color(0xd9a94a), emissiveIntensity: 0.5
+  });
   const scaleGrp = new THREE.Group(); world.add(scaleGrp);
 
   // A big tilted gold hoop reads as the pan of a balance from across the room.
@@ -224,6 +227,7 @@ function init(canvas) {
   document.addEventListener('visibilitychange', () => { visible = !document.hidden; });
 
   const clock = new THREE.Clock();
+  const pv = new THREE.Vector3();
 
   function frame() {
     const t = clock.getElapsedTime();
@@ -254,7 +258,14 @@ function init(canvas) {
 
     // fade per group so the dust keeps its own base opacity
     const fade = Math.max(0, 1 - sp * 0.9);
-    panels.forEach(m => { m.material.opacity = 0.88 * fade; });
+    panels.forEach(m => {
+      m.getWorldPosition(pv);
+      const d = pv.distanceTo(camera.position);
+      // 0 at the near edge of the ring, 1 once it has travelled to the back
+      const depth = THREE.MathUtils.smoothstep(d, 6.0, 12.0);
+      m.material.opacity = 0.92 * depth * fade;
+      m.visible = m.material.opacity > 0.01;
+    });
     dust.material.opacity = 0.55 * fade;
     scaleGrp.visible = fade > 0.02;
 

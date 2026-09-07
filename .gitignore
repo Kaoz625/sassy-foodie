@@ -5,3 +5,4 @@ node_modules/
 # scraped originals stay local until reviewed and optimised into assets/img
 assets/raw/
 .omc/
+dist/

@@ -2,7 +2,7 @@
    Reads data/*.json, writes plain .html at the repo root so Cloudflare Pages
    serves the folder with no build step at deploy time.
    Run:  node build.mjs                                                       */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, cpSync, rmSync } from 'node:fs';
 
 const site = JSON.parse(readFileSync('data/site.json', 'utf8'));
 const readData = f => existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : { sections: [] };
@@ -665,3 +665,21 @@ for (const p of pages) {
   n++;
 }
 console.log(`built ${n} pages`);
+
+/* --- dist -------------------------------------------------------------- *
+ * `node build.mjs --dist` collects ONLY what ships into dist/.
+ * This exists because assets/raw/ holds ~735MB of original scraped media that
+ * must never be uploaded. Deploy dist/, never the repo root.               */
+if (process.argv.includes('--dist')) {
+  rmSync('dist', { recursive: true, force: true });
+  mkdirSync('dist/assets', { recursive: true });
+  for (const p of pages) cpSync(p.file, `dist/${p.file}`);
+  cpSync('src', 'dist/src', { recursive: true });
+  cpSync('assets/img', 'dist/assets/img', { recursive: true });
+  cpSync('assets/favicon.svg', 'dist/assets/favicon.svg');
+  writeFileSync('dist/_headers',
+    '/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n' +
+    '/src/*\n  Cache-Control: public, max-age=86400\n' +
+    '/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n');
+  console.log('dist/ ready to deploy');
+}
