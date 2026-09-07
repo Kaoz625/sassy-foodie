@@ -28,29 +28,60 @@ minimal-luxury grey. There is pomegranate red under the gold.
 
 ## 2. Colour
 
-Dark base. This is a night-kitchen, candlelit, gold-leaf world — not a bright
-white "healthy meal prep" site. Food photography reads richest on dark.
+**Purple is her favourite colour, so purple leads.** Dark base still: a
+night-kitchen, not a bright white "healthy meal prep" site. Food photography
+reads richest on dark.
+
+The direction is **Aubergine & Brass**. It was chosen over two other purple
+directions by judging all three against her actual photographs.
 
 | Token | Value | Role |
 |---|---|---|
-| `--ink` | `#0A0A0B` | Page base. Warm near-black, not pure `#000`. |
-| `--ink-2` | `#121114` | Raised surfaces, cards. |
-| `--ink-3` | `#1B191E` | Hairlines, inset wells. |
+| `--ink` | `#0B0910` | Page base. Near-black with the faintest aubergine. |
+| `--ink-2` | `#14101B` | Raised surfaces, cards. |
+| `--ink-3` | `#1E1828` | Inset wells, form fields. |
+| `--ink-line` | `#382B48` | Hairlines. |
 | `--ivory` | `#F4EDE4` | Primary text. Warm, never pure white. |
-| `--ivory-dim` | `#B8AEA3` | Secondary text, captions. |
-| `--gold` | `#D9A94A` | THE accent. Venus, gold leaf, the scale beam. |
-| `--gold-hi` | `#F2D08A` | Gold highlight — hover, focus, glints. |
-| `--pom` | `#A8202E` | Pomegranate. Passion, heat, "sold out", spice level. |
-| `--blush` | `#E7BBA8` | Soft Venus tone. Infusion side accent. |
+| `--ivory-dim` | `#B8ABAF` | Secondary text, captions. |
+| `--violet` | `#BB69E6` | THE accent. OKLCH H 312.6. |
+| `--violet-hi` | `#D9A6F5` | Hover, focus, glints. |
+| `--brass` | `#B98B3C` | The metal — the scale, the beam, the hero light. |
+| `--brass-hi` | `#F0CE8E` | Champagne. The 3D scale, dust, the key light. |
+| `--heat` | `#C02C4A` | SPICY / SOLD OUT, and the fire in the logo. |
+| `--heat-lift` | `#E4677E` | Heat text on dark. |
+| `--infusion` | `#E184B6` | The Infusion side accent — the other pan. |
+| `--infusion-hi` | `#F1B8D5` | Its highlight. |
 
 **Rules**
-- One accent does the work: gold. Pomegranate is a *spike*, not a second theme.
-- The Infusion menu shifts to `--blush` as its accent so the two sides read as
-  different rooms of the same house — same skeleton, different light.
+
+- **Purple is the voice. Brass is the material and the LIGHT.** That split is
+  the whole direction, and it is not a style choice — it is what keeps her food
+  edible. A chromatic surround pushes an adjacent *neutral* toward its
+  complement, and the complement of violet is green. Her banana pudding is 42%
+  bright near-neutral; her lamb chops sit on a white plate on beige granite.
+  Green whipped cream reads as spoiled dairy. So **any light that falls on a
+  photograph stays warm** — the hero radial glow, and the Three.js key light in
+  `hero3d.js`. If a later session "finishes the job" by turning those violet,
+  the food dies. Do not.
+- One accent does the work: violet. Heat is a *spike*, not a second theme, and
+  brass is a material rather than a colour to decorate with.
+- The Infusion menu re-points `--accent` to `--infusion` so the two sides read
+  as different rooms of the same house — same skeleton, different light.
+- **Hues in comments are OKLCH.** Say so next to any number you record. The
+  same hex is 279 in HSV and 312.6 in OKLCH, and a session that "corrects" this
+  accent to OKLCH 279 lands on a blue-violet and loses the food defence.
+- **Name tokens for what they are, never for what they used to be.** Shipping
+  `--gold: #BB69E6` is how a palette rots; so is leaving a `.pill--gold` class
+  behind for the next person to find and re-introduce gold looking for it.
 - **No gradients as decoration.** Radial light-falloff behind the hero is
   allowed because it reads as a light source. Purple/blue "AI gradient" mesh is
-  banned.
-- Every text/background pair must clear WCAG AA (4.5:1 body, 3:1 large).
+  banned — and this is now a purple site, so that line matters more, not less.
+- Nothing may depend on telling violet from brass by colour alone: for a
+  deuteranope they collapse toward similar-lightness browns. The pills carry
+  words (SPICY, SOLD OUT) and must keep carrying words.
+- Every text/background pair must clear WCAG AA (4.5:1 body, 3:1 large and UI).
+  33 pairs were computed for this palette, including the runtime `color-mix`
+  composites; zero fail. Recompute, do not estimate.
 
 ---
 

@@ -117,9 +117,26 @@ Two things about this harness that will otherwise cost you an hour:
 
 ## Deployment
 
-Cloudflare Pages project `sassy-foodie`, live at https://sassy-foodie.pages.dev.
+Cloudflare Pages project `sassy-foodie`. Two live hostnames, same deploy:
+
+- **https://sassyfoodie.lyreosai.com** — the one to give people.
+- https://sassy-foodie.pages.dev — the Pages default.
+
 **Never Vercel** (house rule). Backends go on Coolify (mac2) and Postgres on
 Neon, though this site needs neither.
+
+**Two different Cloudflare tokens, and using the wrong one looks like a
+permissions bug.** `$CLOUDFLARE_ALL_DNS_TOKEN` reads zones and writes DNS but
+returns `{"code":10000,"message":"Authentication error"}` on every
+`/accounts/{id}/pages/...` call. `$CLOUDFLARE_PAGES_TOKEN` is the Pages one.
+`$CLOUDFLARE_WRANGLER_OAUTH` fails on Pages too. The custom domain was added
+with the Pages token and the CNAME (`sassyfoodie` → `sassy-foodie.pages.dev`,
+proxied) with the DNS token; Cloudflare does NOT auto-create that record.
+
+`~/go/bin/cloudflare-pp-cli` has the right commands but does not read
+`CLOUDFLARE_API_TOKEN` from the environment — its only auth path writes the
+live token in plaintext to `~/.config/cloudflare-pp-cli/config.toml`, so this
+project uses curl for Cloudflare API work instead.
 
 ```bash
 node build.mjs --dist
@@ -127,6 +144,10 @@ set -a && . ~/.credentials/api-keys.env && set +a
 export CLOUDFLARE_API_TOKEN="$CLOUDFLARE_PAGES_TOKEN"
 wrangler pages deploy dist --project-name=sassy-foodie --branch main
 ```
+
+Confirmed working after the last deploy: 7 pages 200 on both hostnames, plus
+`/assets/audio/kitchen-loop.mp3` (363,888 B, `audio/mpeg`), `/assets/favicon.svg`
+and `/assets/img/chef-at-work.jpg`.
 
 Cloudflare serves pages extensionless and 308-redirects `/menu.html` to `/menu`.
 Internal links use `.html` so that local `python3 -m http.server` previewing

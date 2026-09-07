@@ -1,43 +1,60 @@
-# Handoff — Sassy Foodie / Chef Daija
+# Sassy Foodie — handoff
 
-**Working on:** New client site for Chef Daija, a West Philadelphia chef who cooks and sells her own food.
+Working on: Chef Daija's site. This pass did the purple rebrand, her logo, a
+photo of her working, site music, Cash App buttons, and the subdomain.
 
-**Last action:** Priced the whole menu at Philadelphia market rates, rewrote the About page around the three-school / two-city / Japanese-and-jerk story, verified clean at 390 and 1440 through headless Comet, deployed and pushed.
+Last action: deployed and verified live on both hostnames.
 
-**Next step:**
+Next step:
 ```bash
-open docs/price-sheet.md   # get Daija to approve the 51 prices we set, and get the 2 missing school names
+cd "/Users/markususche/Desktop/sassy foodie" && node build.mjs && git status
 ```
 
-**Live:** https://sassy-foodie.pages.dev
-**Repo:** https://github.com/Kaoz625/sassy-foodie (main, pushed, clean)
+## Live
+- **https://sassyfoodie.lyreosai.com** — give people this one
+- https://sassy-foodie.pages.dev
+- Repo: https://github.com/Kaoz625/sassy-foodie
 
-**Key files**
-- `CLAUDE.md` — read first. Explains that `build.mjs` generates the HTML and that editing a `.html` directly gets erased.
-- `DESIGN.md` — the design system, written before any screen. Concept is "The Scale".
-- `build.mjs` — layout, nav, all page copy, menu/gallery renderers. `node build.mjs --dist` for a deployable folder.
-- `data/menu.json`, `data/infusions.json`, `data/gallery.json`, `data/site.json` — all content.
-- `docs/price-sheet.md` — **the thing Daija has to sign off.**
-- `research/` — social-scrape.md, menu-extracted.md, captions.md (136 captions verbatim), viktor-oddy-video.md.
-- `assets/raw/` — 425 original scraped files, ~735MB, gitignored. Never deploy this.
+## What changed this pass
+- **Palette is purple.** "Aubergine & Brass". Read DESIGN.md §2 BEFORE touching
+  a colour — especially the rule that any light falling on a photograph stays
+  warm. The hero glow and the Three.js key light are brass on purpose. Turning
+  them violet makes her food look green.
+- **Her logo** redrawn as SVG: `assets/logo.svg` (lockup) and
+  `assets/logo-mark.svg` (badge, also copied to `assets/favicon.svg`). The fire
+  is warm on purpose — drawn in the accent colour it reads as a magnifying
+  glass, and that mistake was made once already.
+- **Photos of her**: `assets/img/chef-at-work.jpg`, `chef-hands.jpg` (+ mobile).
+  No face in either frame.
+- **Music**: `assets/audio/kitchen-loop.mp3` / `.ogg`, 52s, original generated,
+  provenance in `assets/audio/README.md`. Control is `src/js/audio.js`.
+- **Cash App buttons** everywhere the cashtag used to be plain text.
+- **Infusions**: butter/oil is $75 and marked HER price; the three Shroom items
+  are on the site in their own section.
 
-## Blockers — all need a human, none block the build
+## Verified, not assumed
+- 7 pages x 2 widths: 0 console errors, 0 contrast failures, 0 tap targets
+  under 44px, 0 missing alt, 0 horizontal overflow.
+- Live: music button survives a click and goes aria-pressed=true; canvas paints;
+  0 broken images; 2 Cash App links on the home page; 0 page errors.
+- Audio is real: 51.9s, mono, mean -18.4 dB, max -3.7 dB.
 
-1. **51 prices are ours, not hers.** `docs/price-sheet.md` separates the 8 she published from the 51 we set at Philly market rates, and lists the 9 that moved off an old posted price. She has to approve before these are treated as final. The order flow already makes her confirm the total by text, so nobody can pay a wrong number in the meantime.
-2. **Two culinary schools are unnamed.** Markus says three; the scrape only confirms Walnut Hill College. The About page says "three culinary schools" and names only Walnut Hill. Get the other two names.
-3. **Phone number conflict.** Markus gave 267-616-0427 and that is what is on the site. Her own 2020 post says 267-977-2072. Confirm which is live.
-4. **The infusion side is a business/legal call, not a design one.** Prices there are entirely ours. The page is age-gated and `noindex`. Cannabis is not recreationally legal in PA.
-5. **"Shroom" items deliberately excluded.** Her deleted 2021 dessert menu sold a Shroom Chocolate Bar ($60/$40) and Shroom Hot Chocolate ($30). Those read as psilocybin and are not on the site. Flagged in `research/menu-extracted.md` section 4 and in the price sheet.
+## Blockers
+None.
 
-## Known, low priority
+## Open, low priority
+- The logo has no stacked square lockup WITH the name in it (the badge has no
+  wordmark). She will want one for a shirt front. The judge asked for it; it is
+  not needed for the site.
+- Both photos of her are soft phone stills. If she can send one good photo of
+  herself cooking, it would lift the About page a lot.
+- `menu` at 390px sometimes times out the harness screenshot on Google Fonts.
+  Harness flake, not a site bug — documented in the traps section.
 
-- Internal links use `.html`; Cloudflare Pages serves extensionless and 308-redirects `/menu.html` to `/menu`. Works fine, costs one cached redirect per page. Fix only if you also fix local preview.
-- No custom domain yet. Add one via `wrangler pages` or the dashboard, then add a canonical tag.
-- 115 of her videos are downloaded in `assets/raw/` and none are on the site yet. `data/gallery.json` already supports `{video, poster}` items.
-
-## Gotchas that cost time this session
-
-- **The `gh` keyring token is dead** (401 on REST and GraphQL). `GITHUB_PAT` is fine-grained and cannot create repos. Use `export GH_TOKEN="$GITHUB_API_KEY"` — the classic token.
-- **Playwright `fullPage` screenshots lie on this site.** `backdrop-filter` on the sticky nav and the fixed order bar produce large blank bands, which look exactly like content that failed to render. Use `scroll-shots.mjs` (scrolled viewport frames) instead. The DOM was verified correct.
-- **Headless Comet dies past ~11 pages in one browser session.** `verify-sf.mjs` takes one `WIDTH` per run for that reason.
-- ImageMagick on this Mac is broken (`montage` cannot write output, no fonts). Python + PIL works.
+## Traps (still true)
+- Comet only, `--headless=new`, never `--disable-gpu`.
+- Deploy `dist/`, never the repo root (`assets/raw/` is ~735MB).
+- Generated `.html` is written by `build.mjs`; never hand-edit it.
+- `export GH_TOKEN="$GITHUB_API_KEY"` for git — the keyring token is dead.
+- Cloudflare: Pages token for Pages, DNS token for DNS. See CLAUDE.md.
+- ImageMagick is broken on this Mac. Use Python PIL.

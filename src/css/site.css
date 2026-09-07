@@ -224,10 +224,15 @@ section { padding-block: clamp(var(--s6), 10vw, var(--s8)); position: relative; 
   margin-top: var(--s5); font-family: var(--f-mono); font-size: .72rem;
   text-transform: uppercase; letter-spacing: .14em; color: var(--ivory-dim);
 }
-.hero__meta > * { display: flex; align-items: center; gap: .5rem; }
+.hero__meta > * { display: flex; align-items: center; gap: .5rem; min-height: 44px; }
 .hero__meta > *::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex: none; }
 /* the cashtag is a tap, not a string to write down */
 .hero__cash {
+  /* it is a link, so it has to be a real target: 44px, not the 20px the text
+     alone gave it. The siblings stay plain text and the row centres, so the
+     extra height is invisible. */
+  min-height: 44px;
+  padding-inline: .3rem;
   color: var(--ivory-dim);
   text-decoration: none;
   border-bottom: 1px solid transparent;
